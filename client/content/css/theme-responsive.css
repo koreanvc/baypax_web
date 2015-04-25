@@ -9,7 +9,8 @@
 .arrow-down { display:none;}
 .container { width:auto; padding:0 20px;}
 .header { width:auto; padding:0 20px;}
-.logo { float:none; text-align:center; display:none;}
+.logo { float:none; text-align:center; }
+.logo a h1, .logo a p{color:#f0f0f0;}
 .header .header-inner .nav ul{ float:none !important;}
 .sub-menu ul li{ margin-left:15px !important;}
 #services-box { width:auto; display:block; margin-bottom:20px; padding:20px;}
@@ -122,7 +123,8 @@ a.arrow-down, #slider .top-bar p{ display:none;}
 .arrow-down { display:none;}
 .container { width:auto; padding:0 20px;}
 .header { width:auto; padding:0 20px;}
-.logo { float:none; text-align:center;}
+.logo { float:none; text-align:center; }
+.logo a h1, .logo a p{color:#f0f0f0;}
 #services-box { width:auto; display:block; margin-bottom:20px; padding:20px;}
 .banner-bg { padding:49px 0;}
 .header .header-inner .nav ul{ float:none !important;}
