@@ -1,0 +1,614 @@
+<html lang="ko-KR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://teamvraavos.cafe24.com/xmlrpc.php">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+	<title>BAYPAX | teambraavos</title>
+
+	<!-- WordPress KBoard plugin 4.9 - http://www.cosmosfarm.com/products/kboard -->
+	<link rel="alternate" href="http://teamvraavos.cafe24.com/wp-content/plugins/kboard/rss.php" type="application/rss+xml" title="BAYPAX » KBoard 통합 피드">
+	<!-- WordPress KBoard plugin 4.9 - http://www.cosmosfarm.com/products/kboard -->
+
+	<link rel="alternate" type="application/rss+xml" title="BAYPAX » 피드" href="http://teamvraavos.cafe24.com/?feed=rss2">
+	<link rel="alternate" type="application/rss+xml" title="BAYPAX » 댓글 피드" href="http://teamvraavos.cafe24.com/?feed=comments-rss2">
+	<link rel="stylesheet" id="theme-my-login-css" href="http://teamvraavos.cafe24.com/wp-content/plugins/theme-my-login/theme-my-login.css?ver=6.3.11" type="text/css" media="all">
+	<link rel="stylesheet" id="skt-white-font-css" href="//fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C600%2C700%2C800%2C900%7COpen+Sans%3A300%2C400%2C600%2C700%7CRoboto+Condensed%3A300%2C400%2C700%2C800&amp;ver=4.1.3" type="text/css" media="all">
+	<link rel="stylesheet" id="skt-white-basic-style-css" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/style.css?ver=4.1.3" type="text/css" media="all">
+	<link rel="stylesheet" id="skt-white-responsive-tyle-css" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/css/theme-responsive.css?ver=4.1.3" type="text/css" media="all">
+	<link rel="stylesheet" id="skt-white-editor-style-css" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/editor-style.css?ver=4.1.3" type="text/css" media="all">
+	<link rel="stylesheet" id="skt-white-base-style-css" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/css/style_base.css?ver=4.1.3" type="text/css" media="all">
+	<link rel="stylesheet" id="skt-white-nivo-style-css" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/css/nivo-slider.css?ver=4.1.3" type="text/css" media="all">
+	<link rel="stylesheet" id="skt-white-prettyphoto-style-css" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/css/prettyPhoto.css?ver=4.1.3" type="text/css" media="all">
+	<link rel="stylesheet" id="skt-white-animation-style-css" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/css/animation.css?ver=4.1.3" type="text/css" media="all">
+	<link rel="stylesheet" id="font-awesome-css" href="http://teamvraavos.cafe24.com/wp-content/plugins/kboard/font-awesome/css/font-awesome.min.css?ver=4.9" type="text/css" media="all">
+	<!--[if lte IE 7]>
+<link rel='stylesheet' id='font-awesome-ie7-css'  href='http://teamvraavos.cafe24.com/wp-content/plugins/kboard/font-awesome/css/font-awesome-ie7.min.css?ver=4.9' type='text/css' media='all' />
+<![endif]-->
+	<link rel="stylesheet" id="kboard-skin-default-css" href="http://teamvraavos.cafe24.com/wp-content/plugins/kboard/skin/default/style.css?ver=4.9" type="text/css" media="all">
+	<link rel="stylesheet" id="wpbc-css-bts-css" href="http://teamvraavos.cafe24.com/wp-content/plugins/booking/interface/bs/css/bs.min.css?ver=2.0.0" type="text/css" media="all">
+	<link rel="stylesheet" id="wpbc-css-client-css" href="http://teamvraavos.cafe24.com/wp-content/plugins/booking/css/client.css?ver=1.1" type="text/css" media="all">
+	<link rel="stylesheet" id="wpbc-css-calendar-css" href="http://teamvraavos.cafe24.com/wp-content/plugins/booking/css/calendar.css?ver=1.0" type="text/css" media="all">
+	<link rel="stylesheet" id="wpbc-css-calendar-skin-css" href="http://teamvraavos.cafe24.com/wp-content/plugins/booking/css/skins/traditional.css?ver=1.0" type="text/css" media="all">
+	<link rel="stylesheet" id="simplr-forms-style-css" href="http://teamvraavos.cafe24.com/wp-content/plugins/simplr-registration-form/assets/skins/default.css?ver=4.1.3" type="text/css" media="all">
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-includes/js/jquery/jquery.js?ver=1.11.1"></script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1"></script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/js/jquery.nivo.slider.js?ver=4.1.3"></script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/js/custom.js?ver=4.1.3"></script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/js/smooth-scroll.js?ver=4.1.3"></script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/js/lightbox.js?ver=4.1.3"></script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/js/hook-custom-script.js?ver=4.1.3"></script>
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var wpbc_global1 = {
+			"wpbc_ajaxurl": "http:\/\/teamvraavos.cafe24.com\/wp-admin\/admin-ajax.php",
+			"wpdev_bk_plugin_url": "http:\/\/teamvraavos.cafe24.com\/wp-content\/plugins\/booking",
+			"wpdev_bk_today": "new Array( parseInt(2015), parseInt(4), parseInt(25), parseInt(21), parseInt(55) )",
+			"visible_booking_id_on_page": "[]",
+			"booking_max_monthes_in_calendar": "1y",
+			"user_unavilable_days": "[999]",
+			"wpdev_bk_edit_id_hash": "",
+			"wpdev_bk_plugin_filename": "wpdev-booking.php",
+			"bk_days_selection_mode": "multiple",
+			"wpdev_bk_personal": "0",
+			"block_some_dates_from_today": "0",
+			"message_verif_requred": "This field is required",
+			"message_verif_requred_for_check_box": "This checkbox must be checked",
+			"message_verif_requred_for_radio_box": "At least one option must be selected",
+			"message_verif_emeil": "Incorrect email field",
+			"message_verif_same_emeil": "Your emails do not the same",
+			"message_verif_selectdts": "Please, select booking date(s) at Calendar.",
+			"parent_booking_resources": "[]",
+			"new_booking_title": "Thank you for your online booking.  We will send confirmation of your booking as soon as possible.",
+			"new_booking_title_time": "7000",
+			"type_of_thank_you_message": "message",
+			"thank_you_page_URL": "http:\/\/teamvraavos.cafe24.com\/thank-you",
+			"is_am_pm_inside_time": "false",
+			"is_booking_used_check_in_out_time": "false",
+			"wpbc_active_locale": "ko_KR"
+		};
+		/* ]]> */
+	</script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-content/plugins/booking/js/wpbc_vars.js?ver=1.0"></script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-content/plugins/booking/js/datepick/jquery.datepick.js?ver=1.0"></script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-content/plugins/booking/js/datepick/jquery.datepick-ko.js?ver=1.0"></script>
+	<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-content/plugins/booking/js/client.js?ver=1.0"></script>
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://teamvraavos.cafe24.com/xmlrpc.php?rsd">
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://teamvraavos.cafe24.com/wp-includes/wlwmanifest.xml">
+	<meta name="generator" content="WordPress 4.1.3">
+	<script src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/js/html5.js"></script>
+	<!--[endif]---->
+	<style>
+		.top-bar a,
+		.contact-banner a,
+		input.search-submit,
+		.post-password-form input[type=submit],
+		.icon: hover, .newsletter-form input[type="submit"] {
+			background-color: #00a8ff;
+		}
+		.header .header-inner .nav ul li a: hover, .newsletter h2 span, .recent-post li span, .phone-no strong, a {
+			color: #00a8ff
+		}
+		.more: hover {
+			background: #00a8ff url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/white-arrow.png) no-repeat scroll center center
+		}
+		.our-projects img: hover {
+			background: #00a8ff;
+			float: left;
+			background: url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/camera-icon.png) 50% 50% no-repeat #00a8ff;
+		}
+	</style>
+	<style type="text/css">
+		
+	</style>
+</head>
+
+<body class="home blog">
+
+	<div class="slider-main">
+		<div class="top-bar">
+			<h1>BAYPAX</h1>
+			Make one more day on your trip.
+			<br>
+			<br>
+
+			<a href="http://teamvraavos.cafe24.com/?page_id=2">Reservation</a>
+			<br>
+			<br>
+			<a href="http://teamvraavos.cafe24.com/?page_id=77">LogIN</a>
+			<br>
+			<br>
+
+			<a href="http://teamvraavos.cafe24.com/?page_id=82">Current Status</a> 
+		</div>
+		<!-- top-bar -->
+		<a href="http://teamvraavos.cafe24.com/#services" class="arrow-down"></a>
+		<div id="slider" class="nivoSlider">
+			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/xIsiRLngSRWN02yA2BbK_submission-photo-7.jpg" style="width: 881px; visibility: hidden;">
+			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="width: 881px; visibility: hidden;">
+			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/photo-1422222948315-28aadb7a2cb8.jpg" style="width: 881px; visibility: hidden;">
+			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/eDLHCtzRR0yfFtU0BQar_sylwiabartyzel_themap.jpg" style="width: 881px; visibility: hidden;">
+			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/2e9b0cb2.jpg" style="width: 881px; visibility: hidden;">
+			<img class="nivo-main-image" src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="display: inline; height: 587px; width: 881px;">
+			<div class="nivo-caption"></div>
+			<div class="nivo-directionNav"><a class="nivo-prevNav">Prev</a><a class="nivo-nextNav">Next</a>
+			</div>
+			<div class="nivo-slice" name="0" style="left: 0px; width: 881px; height: 587px; opacity: 1; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-0px;">
+			</div>
+			<div class="nivo-slice" name="1" style="left: 59px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-59px;">
+			</div>
+			<div class="nivo-slice" name="2" style="left: 118px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-118px;">
+			</div>
+			<div class="nivo-slice" name="3" style="left: 177px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-177px;">
+			</div>
+			<div class="nivo-slice" name="4" style="left: 236px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-236px;">
+			</div>
+			<div class="nivo-slice" name="5" style="left: 295px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-295px;">
+			</div>
+			<div class="nivo-slice" name="6" style="left: 354px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-354px;">
+			</div>
+			<div class="nivo-slice" name="7" style="left: 413px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-413px;">
+			</div>
+			<div class="nivo-slice" name="8" style="left: 472px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-472px;">
+			</div>
+			<div class="nivo-slice" name="9" style="left: 531px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-531px;">
+			</div>
+			<div class="nivo-slice" name="10" style="left: 590px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-590px;">
+			</div>
+			<div class="nivo-slice" name="11" style="left: 649px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-649px;">
+			</div>
+			<div class="nivo-slice" name="12" style="left: 708px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-708px;">
+			</div>
+			<div class="nivo-slice" name="13" style="left: 767px; width: 59px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-767px;">
+			</div>
+			<div class="nivo-slice" name="14" style="left: 826px; width: 55px; height: 587px; opacity: 0; overflow: hidden;">
+				<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="position:absolute; width:881px; height:auto; display:block !important; top:0; left:-826px;">
+			</div>
+		</div>
+		<div class="nivo-controlNav"><a class="nivo-control" rel="0">1</a><a class="nivo-control active" rel="1">2</a><a class="nivo-control" rel="2">3</a><a class="nivo-control" rel="3">4</a><a class="nivo-control" rel="4">5</a>
+		</div>
+		<!-- slider -->
+	</div>
+	<!-- slider-main -->
+
+	<div class="header">
+		<div class="header-inner">
+			<div class="logo">
+				<a href="http://teamvraavos.cafe24.com/">
+					<h1>BAYPAX</h1>
+					<p>teambraavos</p>
+				</a>
+			</div>
+			<!-- logo -->
+			<div class="toggle">
+				<a class="toggleMenu" href="#" style="display: block;">Menu</a>
+			</div>
+			<!-- toggle -->
+			<div class="nav" style="display: none;">
+				<div class="menu-%eb%a9%94%eb%89%b4-1-container">
+					<ul id="menu-%eb%a9%94%eb%89%b4-1" class="menu">
+						<li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-70"><a href="http://teamvraavos.cafe24.com/">Main</a>
+						</li>
+						<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="http://teamvraavos.cafe24.com/?page_id=10">Service</a>
+						</li>
+						<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="http://teamvraavos.cafe24.com/?page_id=6">Reservation</a>
+						</li>
+						<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="http://teamvraavos.cafe24.com/?page_id=4">About Us</a>
+						</li>
+						<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://teamvraavos.cafe24.com/?page_id=12">Q&amp;A</a>
+						</li>
+						<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://teamvraavos.cafe24.com/?page_id=8">FAQ</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- nav -->
+			<div class="clear"></div>
+		</div>
+		<!-- header-inner -->
+	</div>
+	<!-- header -->
+	<div class="main-container">
+
+
+		<section style="background-color:#ffffff; " id="services" class="menu_page">
+			<div class="container">
+				<div class="services bounceIn">
+					<h2>Our Services</h2>
+					<div id="services-box">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/icon-web-design.png" alt="">
+						<h2>Web Design</h2>
+						Lorem Ipsum is simply dummy text of they printing and typesetting industry. Lore Ipsum has been the industry standard in dummy text ever since the 1500s, when an unknown printer took a galley of type andin scrambled it to make a type book.
+
+						<a class="read-more" href="#">Read More</a>
+
+					</div>
+					<div id="services-box">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/icon-web-design.png" alt="">
+						<h2>Web Development</h2>
+						Lorem Ipsum is simply dummy text of they printing and typesetting industry. Lore Ipsum has been the industrys standard in dummy text ever since the 1500s, when an unknown printer took a galley of type andin scrambled it to make a type book.
+
+						<a class="read-more" href="#">Read More</a>
+
+					</div>
+					<div id="services-box">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/icon-web-design.png" alt="">
+						<h2>Mobile Website</h2>
+						Lorem Ipsum is simply dummy text of they printing and typesetting industry. Lore Ipsum has been the industrys standard in dummy text ever since the 1500s, when an unknown printer took a galley of type andin scrambled it to make a type book.
+
+						<a class="read-more" href="#">Read More</a>
+
+					</div>
+					<div id="services-box">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/icon-web-design.png" alt="">
+						<h2>WordPress Themes</h2>
+						Lorem Ipsum is simply dummy text of they printing and typesetting industry. Lore Ipsum has been the industrys standard in dummy text ever since the 1500s, when an unknown printer took a galley of type andin scrambled it to make a type book.
+
+						<a class="read-more" href="#">Read More</a>
+
+					</div>
+				</div>
+				<!-- middle-align -->
+				<div class="clear"></div>
+			</div>
+			<!-- container -->
+		</section>
+		<div class="clear"></div>
+
+		<section style="background-image:url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/contact-banner.jpg); background-repeat:no-repeat; background-position: center center; background-size: cover; " id="" class="">
+			<div class="container">
+				<div class="contact-banner">
+					<h3>Do you like SKT White? Is it everything you wanted from a theme?</h3>
+					<a class="contact-button bounceIn" href="#">Contact Us</a> 
+				</div>
+				<!-- middle-align -->
+				<div class="clear"></div>
+			</div>
+			<!-- container -->
+		</section>
+		<div class="clear"></div>
+
+		<section style="background-color:#ffffff; " id="" class="">
+			<div class="container">
+				<div class="gry-row">
+					<h2>A message from our manager</h2>
+					<div class="one_half">
+						<div class="message-thumb fadeInLeftBig">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/manager-img.jpg" alt="">
+						</div>
+					</div>
+					<div class="one_half last">
+						<div class="message-desc fadeInRightBig">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas imperdiet ex at mauris varius interdum. Fusce mattis gravida libero, nec sollicitudin eros finibus at. Praesent ex diam, mattis vitae efficitur vel, egestas sed neque. Sed congue
+							interdum cursus. Nullam in tincidunt neque. Cras enim tortor, porta id tempor vel, placerat et tellus. Vestibulum eget ullamcorper orci. Suspendisse potenti. Proin rutrum magna ac gravida scelerisque. Nunc eu sodales nisi. Curabitur ligula quam,
+							maximus commodo sodales ut, pretium eget ipsum. Proin lobortis, nibh vel fringilla dictum, ipsum tortor cursus ex, facilisis cursus sapien sem at sem. Mauris in risus ac massa congue volutpat sit amet at metus. Ut in metus posuere, rutrum risus
+							eget, aliquam arcu. Curabitur tincidunt, nulla ut pellentesque aliquet, mi risus pharetra sem, at euismod tortor eros imperdiet turpis.Donec ut ex ac nulla pellentesque mollis in a enim. Praesent placerat sapien mauris, vitae sodales tellus venenatis
+							ac. Suspendisse suscipit velit id ultricies auctor. Duis turpis arcu, aliquet sed sollicitudin sed, porta quis urna. Quisque velit nibh, egestas et erat a, vehicula interdum augue. Morbi ut elementum justo. Fusce mattis gravida libero, nec sollicitudin
+							eros finibus at. Praesent ex diam, mattis vitae efficitur vel, egestas sed neque. Sed congue interdum cursus. Nullam in tincidunt neque. Cras enim tortor, porta id tempor vel, placerat et tellus. Vestibulum eget ullamcorper orci. Suspendisse potenti.
+							Proin rutrum magna ac gravida scelerisque. Nunc eu sodales nisi.</div>
+					</div>
+				</div>
+				<!-- middle-align -->
+				<div class="clear"></div>
+			</div>
+			<!-- container -->
+		</section>
+		<div class="clear"></div>
+
+		<section style="background-image:url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/stat-banner.jpg); background-repeat:no-repeat; background-position: center center; background-size: cover; " id="stat" class="menu_page">
+			<div class="container">
+				<div class="stat zoomInLeft">
+					<h2>Our Statistics</h2>
+					<ul>
+						<ul>
+							<li>
+								<h2>2000</h2>
+								<h5>Download</h5>
+							</li>
+							<li>
+								<h2>300</h2>
+								<h5>Projects Done</h5>
+							</li>
+							<li>
+								<h2>400</h2>
+								<h5>Happy Clients</h5>
+							</li>
+							<li>
+								<h2>100</h2>
+								<h5>Awards Won</h5>
+							</li>
+						</ul>
+					</ul>
+				</div>
+				<!-- middle-align -->
+				<div class="clear"></div>
+			</div>
+			<!-- container -->
+		</section>
+		<div class="clear"></div>
+
+		<section style="background-color:#ffffff; " id="support" class="menu_page">
+			<div class="container">
+				<div class="our-team">
+					<h2>Our Support</h2>
+					<div class="team-desc fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lacinia malesuada mi vitae tristique. Donec fringilla ullamcorper nulla sed gravida. Vestibulum quis sollicitudin nibh. Class aptent taciti sociosqu ad litora torquent per conubia
+						nostra, per inceptos himenaeos. Duis odio augue, efficitur non viverra a, fermentum sit amet felis. Cras scelerisque purus eu pellentesque feugiat. Curabitur ut bibendum ante. Sed et ex blandit, auctor purus mollis, euismod mi. Fusce vel nisi sit
+						amet dolor condimentum ultricies. Morbi sagittis arcu sed odio finibus eleifend. Pellentesque nunc purus, scelerisque rutrum sem eu, accumsan tempor orci. Aliquam neque neque, elementum et nunc non, sodales fringilla turpis.</div>
+				</div>
+				<!-- middle-align -->
+				<div class="clear"></div>
+			</div>
+			<!-- container -->
+		</section>
+		<div class="clear"></div>
+
+		<section style="background-color:#ffffff; " id="portfolio" class="menu_page">
+			<div class="container" style="width:100%">
+				<div class="our-projects">
+					<h2>Our Projects</h2>
+					<a class="example-image-link" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-seventh.jpg" data-title="Title 1" data-lightbox="example-set">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-seventh.jpg" alt="">
+					</a>
+					<a class="example-image-link" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-sixth.jpg" data-title="Title 2" data-lightbox="example-set">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-sixth.jpg" alt="">
+					</a>
+					<a class="example-image-link" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-fifth.jpg" data-title="Title 3" data-lightbox="example-set">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-fifth.jpg" alt="">
+					</a>
+					<a class="example-image-link" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-fourth.jpg" data-title="Title 4" data-lightbox="example-set">
+						<img style="margin-right: 0;" src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-fourth.jpg" alt="">
+					</a>
+					<a class="example-image-link" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-nine.jpg" data-title="Title 5" data-lightbox="example-set">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-nine.jpg" alt="">
+					</a>
+					<a class="example-image-link" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-ten.jpg" data-title="Title 6" data-lightbox="example-set">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-ten.jpg" alt="">
+					</a>
+					<a class="example-image-link" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-sixth.jpg" data-title="Title 7" data-lightbox="example-set">
+						<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-sixth.jpg" alt="">
+					</a>
+					<a class="example-image-link" href="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-fifth.jpg" data-title="Title 8" data-lightbox="example-set">
+						<img style="margin-right: 0;" src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/banner-fifth.jpg" alt="">
+					</a>
+				</div>
+				<!-- middle-align -->
+				<div class="clear"></div>
+			</div>
+			<!-- container -->
+		</section>
+		<div class="clear"></div>
+
+		<section style="background-color:#ffffff; " id="contact" class="menu_page">
+			<div class="container">
+				<div class="client_banner">
+					<h2>Our Clients</h2>
+					<div class="client ">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/compact-logo.jpg" alt="">
+						</a>
+					</div>
+					<div class="client ">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/tv-digital-logo.jpg" alt="">
+						</a>
+					</div>
+					<div class="client ">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/changes-logo.jpg" alt="">
+						</a>
+					</div>
+					<div class="client ">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/finance-logo.jpg" alt="">
+						</a>
+					</div>
+					<div class="client last">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/thousand-logo.jpg" alt="">
+						</a>
+					</div>
+					<div class="client ">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/finance-logo.jpg" alt="">
+						</a>
+					</div>
+					<div class="client ">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/thousand-logo.jpg" alt="">
+						</a>
+					</div>
+					<div class="client ">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/changes-logo.jpg" alt="">
+						</a>
+					</div>
+					<div class="client ">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/tv-digital-logo.jpg" alt="">
+						</a>
+					</div>
+					<div class="client last">
+						<a href="#">
+							<img src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/compact-logo.jpg" alt="">
+						</a>
+					</div>
+				</div>
+				<!-- middle-align -->
+				<div class="clear"></div>
+			</div>
+			<!-- container -->
+		</section>
+		<div class="clear"></div>
+
+		<section class="menu_page" style="background-color:#ffffff; ">
+			<div class="container">
+				<div class="latest-news">
+					<h2>Latest News</h2>
+					<div class="news-box  fadeInDown">
+						<div class="news">
+							<a href="http://teamvraavos.cafe24.com/?p=15">
+								<img alt=" " src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/img_404.png">
+							</a>
+							<h2>sdfsdfs</h2>
+							<div style="float:left;">2015년 4월 10일</div>
+							<div style="float:right;color:#cccccc;font-weight:bold;font-size:15px">
+								<img style="width:auto;float:left;position:relative;top:3px;" src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/icon-comment.png">&nbsp;&nbsp;0</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="news-box  fadeInDown">
+						<div class="news">
+							<a href="http://teamvraavos.cafe24.com/?p=1">
+								<img alt=" " src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/img_404.png">
+							</a>
+							<h2>안녕하세요!</h2>
+							<div style="float:left;">2015년 2월 20일</div>
+							<div style="float:right;color:#cccccc;font-weight:bold;font-size:15px">
+								<img style="width:auto;float:left;position:relative;top:3px;" src="http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/icon-comment.png">&nbsp;&nbsp;1</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="home-pagination">
+						<div class="pagination">
+							<div>
+								<ul>
+									<li><span>1 of 1</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- home-pagination -->
+				</div>
+				<!-- latest-news -->
+				<div class="clear"></div>
+			</div>
+			<!-- container -->
+		</section>
+
+
+		<section style="background-color:#ffffff;">
+			<div class="container">
+				<h2>We Are Everywhere!</h2>
+				<div class="social-icons">
+					<a href="#facebook">
+						<div class="facebook icon"></div>
+					</a>
+					<a href="#twitter">
+						<div class="twitt icon"></div>
+					</a>
+					<a href="#pinterest">
+						<div class="pinterest icon"></div>
+					</a>
+					<a href="#youtube">
+						<div class="youtube icon"></div>
+					</a>
+					<a href="#instagram">
+						<div class="instagram icon"></div>
+					</a>
+				</div>
+				<!-- social-icons -->
+			</div>
+			<!-- container -->
+		</section>
+		<div id="footer-wrapper">
+			<footer class="footer">
+				<div class="footer-col-1">
+					<h2>About teambraavos</h2>
+					<p>여기 우리 소개</p>
+				</div>
+
+				<div class="footer-col-1">
+					<h2>Recent Posts</h2>
+					<ul class="recent-post">
+						<li>
+							<a href="http://teamvraavos.cafe24.com/?p=15">
+								<p>아아아아아 안녕하세요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ야야야야 &nbsp;</p>
+								<br>
+								<span>Read more...</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://teamvraavos.cafe24.com/?p=1">
+								<p>워드프레스에 오신 것을 환영합니다. 이것은 첫번째 글입니다. 이 글을 고치거나…</p>
+								<br>
+								<span>Read more...</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="footer-col-3">
+					<h2>Teambraavos</h2>
+					<p>Nuritkumsquare 6F 601, 1605, Sangam-dong, Mapo-gu, Seoul, Korea</p>
+					<div class="phone-no">
+						<p><strong>Phone:</strong>+82 010 2637 2923</p>
+						<p><strong>E-mail:</strong><a href="mailto:teambraavos@gmail.com">teambraavos@gmail.com</a>
+						</p>
+						<p><strong>Website:</strong><a href="http://teambraavos.com" target="_blank">teambraavos.com</a>
+						</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</footer>
+
+			<div class="copyright-wrapper">
+				<div class="copyright">
+					<div class="copyright-txt">© Teambraavos. All Rights Reserved</div>
+					<div class="design-by"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.2"></script>
+
+
+	</div>
+	<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
+	<div id="lightbox" class="lightbox" style="display: none;">
+		<div class="lb-outerContainer">
+			<div class="lb-container">
+				<img class="lb-image" src="">
+				<div class="lb-nav">
+					<a class="lb-prev" href=""></a>
+					<a class="lb-next" href=""></a>
+				</div>
+				<div class="lb-loader">
+					<a class="lb-cancel"></a>
+				</div>
+			</div>
+		</div>
+		<div class="lb-dataContainer">
+			<div class="lb-data">
+				<div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span>
+				</div>
+				<div class="lb-closeContainer">
+					<a class="lb-close"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="display: none;"></div>
+</body>
+
+</html>
