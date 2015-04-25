@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>corse test</title>
+
+  
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+  <div class="container">
+    
+
+  	<input id="stdate" type="text" class="form-control" placeholder="시작 ㅅㅂ" />
+    <input id="eddate"type="text" class="form-control" placeholder="끝날 ㅅㅂ" />
+    <button class="btn btn-primary" onclick="test()">예약</button>
+    <button class="btn btn-primary" onclick="test2()">취소 시빠</button>
+
+  </div>
+</body>
+<script type="text/javascript">
+
+
+$(function() {
+    $( "#stdate" ).datepicker();
+    $("#eddate").datepicker();
+  });
+
+function test() {
+     $.ajax({
+           type:"POST",
+           url:"/test",
+           dataType:"JSON", // json으로 데이터 받겠수다!
+           success : function(data) {
+                 // 성공이다
+                 // TODO
+                 console.log(data);
+           },
+           complete : function(data) {
+                 // 그냥 끝났다
+                 // TODO
+           },
+           error : function(xhr, status, error) {
+                 alert("에러다 ㅂㅅ아");
+           }
+     });
+}
+function test2(){
+	alert('취소하지마셈 ㅜㅜ')
+}
+
+
+</script>
+</html>
