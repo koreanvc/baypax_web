@@ -54,15 +54,17 @@
 	<!-- slider -->
 	</div>
 	<div class="header">
-		<div id='main-view' class="header-inner">
+		<div id="scrollTop"></div>
+		<div class="header-inner">
 			<div id='logo' class="logo">
 				<a href="http://teamvraavos.cafe24.com/">
 					<h1>BAYPAX</h1>
 					<p>teambraavos</p>
 				</a>
 			</div>
+			<div id="mobileScrollTop"></div>
 			<!-- logo -->
-			<div class="toggle">
+			<div class="toggle" style="margin-top:20px">
 				<a class="toggleMenu" href="#">Menu</a>
 			</div>
 			<!-- toggle -->
@@ -130,15 +132,22 @@
 	<script src="app/index.js"></script>
 		<script type="text/javascript">
 			function scroll(id) {
+			
 				$('html, body').animate({
 					scrollTop: $("#" + id).offset().top
 				}, 500);
+				
 			}
 
 			function pageLoad(url){	
 				document.title=url;
 				$('#sitemain').load(url)
-				scroll('main-view')
+				if($(window).width()>719){
+					setTimeout(function(){scroll('scrollTop')},100);
+				}
+				else{
+					setTimeout(function(){scroll('mobileScrollTop')},100);
+				}
 			}
 
 		</script>
