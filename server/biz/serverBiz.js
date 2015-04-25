@@ -4,8 +4,7 @@ var http = require('http'),
     https = require('https'),
     exec = require('node-ssh-exec'),
     config = require('../config/config'),
-    serverDac = require('../dac/serverDac'),
-    prvKey=require('fs').readFileSync(config.prvKeyPath);
+    serverDac = require('../dac/serverDac');
 
 var pm2ConnectionOption = {
     host: '',
