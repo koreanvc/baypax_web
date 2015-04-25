@@ -7,11 +7,13 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../content/theme-responsive.css">
-		<link rel="stylesheet" href="../content/style.css">
+	<script src="../content/js/jquery.nivo.slider.js"></script>
+	<link rel="stylesheet" href="../content/css/nivo-slider.css">
+	<link rel="stylesheet" href="../content/css/style.css">
+	<link rel="stylesheet" href="../content/css/theme-responsive.css">
 
 	<title>BAYPAX | teambraavos</title>
-	
+	<style>.top-bar a, .contact-banner a, input.search-submit, .post-password-form input[type=submit], .icon:hover, .newsletter-form input[type="submit"]{background-color:#00a8ff;}.header .header-inner .nav ul li a:hover, .newsletter h2 span, .recent-post li span, .phone-no strong, a{color:#00a8ff}.more:hover{background:#00a8ff url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/white-arrow.png) no-repeat scroll center center}.our-projects img:hover{ background:#00a8ff; float:left; background:url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/camera-icon.png) 50% 50% no-repeat #00a8ff; }</style>
 	<style type="text/css">
 		
 	</style>
@@ -25,65 +27,47 @@
 			Make one more day on your trip.
 			<br>
 			<br>
-
 			<a href="#">Reservation</a>
 			<br>
 			<br>
-			<a href="#">LogIN</a>
+			<a href="#">LogIn</a>
 			<br>
 			<br>
-
 			<a href="#">Current Status</a> 
 		</div>
 		<!-- top-bar -->
-		<a href="http://teamvraavos.cafe24.com/#services" class="arrow-down"></a>
+		<a href="javascript:scroll('logo');" class="arrow-down" ></a>
 		<div width="100%">
 			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" style="width:100%">
 		</div>
 			
 		<!-- slider -->
 	</div>
-
-	<div class="header">
-		<div class="header-inner">
-			<div class="logo">
-				<a href="http://teamvraavos.cafe24.com/">
-					<h1>BAYPAX</h1>
-					<p>teambraavos</p>
-				</a>
-			</div>
-			<!-- logo -->
-			<div class="toggle">
-				<a class="toggleMenu" href="#" style="display: block;">Menu</a>
-			</div>
-			<!-- toggle -->
-			<div class="nav" style="display: none;">
-				<div class="menu-%eb%a9%94%eb%89%b4-1-container">
-					<ul id="menu-%eb%a9%94%eb%89%b4-1" class="menu">
-						<li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-70"><a href="http://teamvraavos.cafe24.com/">Main</a>
-						</li>
-						<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="http://teamvraavos.cafe24.com/?page_id=10">Service</a>
-						</li>
-						<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="http://teamvraavos.cafe24.com/?page_id=6">Reservation</a>
-						</li>
-						<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="http://teamvraavos.cafe24.com/?page_id=4">About Us</a>
-						</li>
-						<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://teamvraavos.cafe24.com/?page_id=12">Q&amp;A</a>
-						</li>
-						<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://teamvraavos.cafe24.com/?page_id=8">FAQ</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!-- nav -->
-			<div class="clear"></div>
-		</div>
-		<!-- header-inner -->
-	</div>
+<div class="header">
+            		<div class="header-inner">
+                    		<div class="logo">
+                            		<a href="http://teamvraavos.cafe24.com/">
+                                    	    	                                    <h1>BAYPAX</h1>
+                                            <p>teambraavos</p>
+                                                                            </a>
+                             </div><!-- logo -->
+                            <div class="toggle">
+                            <a class="toggleMenu" href="#" style="display: none;">Menu</a>
+                            </div><!-- toggle -->
+                            <div class="nav" style="display: block;">
+								<div class="menu-%eb%a9%94%eb%89%b4-1-container"><ul id="menu-%eb%a9%94%eb%89%b4-1" class="menu"><li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-70"><a href="http://teamvraavos.cafe24.com/">Main</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="http://teamvraavos.cafe24.com/?page_id=10">Service</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="http://teamvraavos.cafe24.com/?page_id=6">Reservation</a></li>
+<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="http://teamvraavos.cafe24.com/?page_id=4">About Us</a></li>
+<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://teamvraavos.cafe24.com/?page_id=12">Q&amp;A</a></li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://teamvraavos.cafe24.com/?page_id=8">FAQ</a></li>
+</ul></div>                            </div><!-- nav --><div class="clear"></div>
+                    </div><!-- header-inner -->
+            </div>
 	<!-- header -->
 	<div class="main-container">
 
-		<div class="content-area">
+		<div id="main-view" class="content-area">
 			<div class="middle-align content_sidebar">
 				<div class="site-main" id="sitemain">
 
@@ -236,17 +220,11 @@
 
 		<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.2"></script>
 		<script type="text/javascript">
-			(function() {
-				var request, b = document.body,
-					c = 'className',
-					cs = 'customize-support',
-					rcs = new RegExp('(^|\\s+)(no-)?' + cs + '(\\s+|$)');
-
-				request = true;
-
-				b[c] = b[c].replace(rcs, ' ');
-				b[c] += (window.postMessage && request ? ' ' : ' no-') + cs;
-			}());
+			function scroll(id){
+				$('html, body').animate({
+				    scrollTop: $("#"+id).offset().top
+				}, 500);
+			}
 		</script>
 </body>
 

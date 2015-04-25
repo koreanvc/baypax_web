@@ -24,6 +24,13 @@ module.exports = function(app) {
 		});
 	});
 
+  router.get('/index2', function(req, res, next) {
+    // TODO: userId is always 1
+    res.render('app/index2.html', {
+      //data: { gameId: 4 }
+    });
+  });
+
 	router.post('/test', function(req, res, next) {
 		console.log('router');
 		var callback = sendDataCallback(res, next);
