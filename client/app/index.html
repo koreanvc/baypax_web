@@ -46,7 +46,7 @@
 			<a href="#">Current Status</a> 
 		</div>
 		<!-- top-bar -->
-		<a style="z-index:10" href="javascript:scroll('logo');" class="arrow-down"></a>
+		<a style="z-index:10" href="javascript:scroll('main-view');" class="arrow-down"></a>
 		<!-- slider -->
 	</div>
 	<!-- slider-main -->
@@ -54,7 +54,7 @@
 	<!-- slider -->
 	</div>
 	<div class="header">
-		<div class="header-inner">
+		<div id='main-view' class="header-inner">
 			<div id='logo' class="logo">
 				<a href="http://teamvraavos.cafe24.com/">
 					<h1>BAYPAX</h1>
@@ -92,7 +92,7 @@
 	<!-- header -->
 	<div class="main-container">
 
-		<div id="main-view" class="content-area">
+		<div class="content-area">
 			<div class="middle-align content_sidebar">
 				<div class="site-main" id="sitemain">
 					<!-- #post-## -->
@@ -138,7 +138,7 @@
 			function pageLoad(url){	
 				document.title=url;
 				$('#sitemain').load(url)
-				scroll('logo')
+				scroll('main-view')
 			}
 
 		</script>
