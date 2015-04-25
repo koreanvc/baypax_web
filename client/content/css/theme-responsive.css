@@ -9,7 +9,7 @@
 .arrow-down { display:none;}
 .container { width:auto; padding:0 20px;}
 .header { width:auto; padding:0 20px;}
-.logo { float:none; text-align:center;}
+.logo { float:none; text-align:center; display:none;}
 .header .header-inner .nav ul{ float:none !important;}
 .sub-menu ul li{ margin-left:15px !important;}
 #services-box { width:auto; display:block; margin-bottom:20px; padding:20px;}
