@@ -144,10 +144,10 @@
 				document.title=url;
 				$('#sitemain').load(url)
 				if($(window).width()>719){
-					setTimeout(function(){scroll('scrollTop')},100);
+					scroll('scrollTop');
 				}
 				else{
-					setTimeout(function(){scroll('mobileScrollTop')},100);
+					scroll('mobileScrollTop');
 				}
 			}
 
