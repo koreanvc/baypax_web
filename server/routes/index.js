@@ -2,6 +2,7 @@
 
 var config = require('../config/config'),
 	router = require('express').Router(),
+  layout=require('express-layout'),
 	serverBiz = require('../biz/serverBiz');
 
 module.exports = function(app) {
@@ -19,29 +20,24 @@ module.exports = function(app) {
 	// render page
 	router.get('/', function(req, res, next) {
 		// TODO: userId is always 1
-		res.render('app/index.html', {
-			//data: { gameId: 4 }
-		});
+		res.render('app/index.html', {title:'test'});
 	});
 
-  router.get('/index2', function(req, res, next) {
-    // TODO: userId is always 1
-    res.render('app/index2.html', {
-      //data: { gameId: 4 }
-    });
+  router.get('/reservation', function(req, res, next) {
+    res.render('app/reservation.html', {title:'Reservation | BAYPAX'});
   });
 
-	router.post('/test', function(req, res, next) {
-		console.log('router');
-		var callback = sendDataCallback(res, next);
-		//console.log('success');
-		serverBiz.getPM2Info(req.body.host,req.body.username,callback);
-	});
+  router.get('/login', function(req, res, next) {
+    res.render('app/login.html', {title:'LogIn | BAYPAX'});
+  });
 
-	router.post('/test2', function(req, res, next) {
-		var callback = sendDataCallback(res, next);
-		serverBiz.getServerList(callback);
-	})
+  router.post('/loginAction',function(req,res,next){
+    var id=req.body.userId;
+    var pwd=req.body.pwd;
+    console.log(id+'/'+pwd);
+    var callback=sendDataCallback(res,next);
+    callback('test');
+  })
 
 	/*
   router.post('/signIn',function(req,res,next){
@@ -159,5 +155,8 @@ module.exports = function(app) {
 
 */
 	// use router
+  //app.use(layout());
+  //app.set('layouts','../client/app/layout');
+  //app.set('layout','index.html');
 	app.use(router);
 };

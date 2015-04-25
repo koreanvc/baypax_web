@@ -11,8 +11,10 @@
 	<link rel="stylesheet" href="../content/css/nivo-slider.css">
 	<link rel="stylesheet" href="../content/style.css">
 	<link rel="stylesheet" href="../content/css/theme-responsive.css">
-
-	<title>BAYPAX | teambraavos</title>
+	<link rel="stylesheet" href="../content/css/font.css">
+	<title><%- title %></title>
+<!--
+	<title>BAYPAX | teambraavos</title>-->
 	<style>.top-bar a, .contact-banner a, input.search-submit, .post-password-form input[type=submit], .icon:hover, .newsletter-form input[type="submit"]{background-color:#00a8ff;}.header .header-inner .nav ul li a:hover, .newsletter h2 span, .recent-post li span, .phone-no strong, a{color:#00a8ff}.more:hover{background:#00a8ff url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/white-arrow.png) no-repeat scroll center center}.our-projects img:hover{ background:#00a8ff; float:left; background:url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/camera-icon.png) 50% 50% no-repeat #00a8ff; }</style>
 	<style type="text/css">
 		
@@ -27,16 +29,16 @@
 			Make one more day on your trip.
 			<br>
 			<br>
-			<a href="#">Reservation</a>
+			<a href="javascript:pageLoad('/reservation')">Reservation</a>
 			<br>
 			<br>
-			<a href="#">LogIn</a>
+			<a href="javascript:pageLoad('/login')">LogIn</a>
 			<br>
 			<br>
 			<a href="#">Current Status</a> 
 		</div>
 		<!-- top-bar -->
-		<a href="javascript:scroll('logo');" class="arrow-down"></a>
+		<a style="z-index:10" href="javascript:scroll('logo');" class="arrow-down"></a>
 		<div id="slider" class="nivoSlider">
 			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/xIsiRLngSRWN02yA2BbK_submission-photo-7.jpg" />
 			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" />
@@ -52,7 +54,7 @@
 	</div>
 	<div class="header">
 		<div class="header-inner">
-			<div class="logo">
+			<div id='logo' class="logo">
 				<a href="http://teamvraavos.cafe24.com/">
 					<h1>BAYPAX</h1>
 					<p>teambraavos</p>
@@ -60,23 +62,23 @@
 			</div>
 			<!-- logo -->
 			<div class="toggle">
-				<a class="toggleMenu" href="#" style="display: none;">Menu</a>
+				<a class="toggleMenu" href="#">Menu</a>
 			</div>
 			<!-- toggle -->
 			<div class="nav" style="display: block;">
-				<div class="menu-%eb%a9%94%eb%89%b4-1-container">
+				<div class="menu-container">
 					<ul id="menu-%eb%a9%94%eb%89%b4-1" class="menu">
-						<li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-70"><a href="http://teamvraavos.cafe24.com/">Main</a>
+						<li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-70"><a href="#">Main</a>
 						</li>
-						<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="http://teamvraavos.cafe24.com/?page_id=10">Service</a>
+						<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="#">Service</a>
 						</li>
-						<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="http://teamvraavos.cafe24.com/?page_id=6">Reservation</a>
+						<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="#">Reservation</a>
 						</li>
-						<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="http://teamvraavos.cafe24.com/?page_id=4">About Us</a>
+						<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="#">About Us</a>
 						</li>
-						<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://teamvraavos.cafe24.com/?page_id=12">Q&amp;A</a>
+						<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="#">Q&amp;A</a>
 						</li>
-						<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://teamvraavos.cafe24.com/?page_id=8">FAQ</a>
+						<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="#">FAQ</a>
 						</li>
 					</ul>
 				</div>
@@ -92,97 +94,6 @@
 		<div id="main-view" class="content-area">
 			<div class="middle-align content_sidebar">
 				<div class="site-main" id="sitemain">
-
-					<article id="post-2" class="post-2 page type-page status-publish hentry">
-						<header class="entry-header">
-							<h1 class="entry-title">Reservation</h1>
-						</header>
-						<!-- .entry-header -->
-
-						<div class="entry-content">
-							<div id="simplr-form">
-								<form method="post" action="" id="simplr-reg">
-									<div class="simplr-field ">
-										<label for="username" class="left">Your Username: <span class="required">*</span>
-										</label>
-										<input type="text" name="username" class="right" value="">
-										<br>
-									</div>
-									<div class="simplr-clr"></div>
-									<div class="option-field ">
-										<label for="first_name">First Name<span class="required">*</span>
-										</label>
-										<input type="text" name="first_name" id="first_name" value="" class=" ">
-									</div>
-									<div class="simplr-clr"></div>
-									<div class="option-field ">
-										<label for="last_name">Last Name<span class="required">*</span>
-										</label>
-										<input type="text" name="last_name" id="last_name" value="" class=" ">
-									</div>
-									<div class="simplr-clr"></div>
-									<div class="option-field ">
-										<label for="country">Country<span class="required">*</span>
-										</label>
-										<input type="text" name="country" id="country" value="" class=" ">
-									</div>
-									<div class="simplr-clr"></div>
-									<div class="option-field ">
-										<label for="pn">Phone Number<span class="required">*</span>
-										</label>
-										<input type="text" name="pn" id="pn" value="" class=" ">
-									</div>
-									<div class="simplr-clr"></div>
-									<div class="option-field ">
-										<label for="destination">Destination<span class="required">*</span>
-										</label>
-										<input type="text" name="destination" id="destination" value="" class=" ">
-									</div>
-									<div class="simplr-clr"></div>
-									<div class="option-field radio ">
-										<label for="number">Number of Bag<span class="required">*</span>
-										</label>
-										1
-										<input type="radio" name="number" value="1">2
-										<input type="radio" name="number" value=" 2">3
-										<input type="radio" name="number" value=" 3">4
-										<input type="radio" name="number" value=" 4">5
-										<input type="radio" name="number" value=" 5">6
-										<input type="radio" name="number" value=" 6">7
-										<input type="radio" name="number" value=" 7">8
-										<input type="radio" name="number" value=" 8">9
-										<input type="radio" name="number" value=" 9">10
-										<input type="radio" name="number" value=" 10">
-									</div>
-									<div class="simplr-clr"></div>
-									<div class="simplr-field email-field ">
-										<label for="email" class="left">Email Address: <span class="required">*</span>
-										</label>
-										<input type="text" name="email" class="right" value="">
-										<br>
-									</div>
-									<div class="simplr-clr"></div>
-									<div class="simplr-field email-field ">
-										<label for="email" class="left">Confirm Email: <span class="required">*</span>
-										</label>
-										<input type="text" name="email_confirm" class="right" value="">
-										<br>
-									</div>
-									<div class="simplr-clr"></div>
-									<input type="hidden" name="atts[message]" value="TOUREAZE reservation">
-									<input type="hidden" name="atts[notify]" value="TOUREAZE reservation">
-									<input type="hidden" name="atts[thanks]" value="4">
-									<input type="hidden" name="atts[fields]" value="first_name,last_name,country,pn,destination,number">
-									<input type="submit" name="submit-reg" value="Register" class="submit button">
-									<input type="hidden" name="simplr_nonce" value="98929d9c28">
-									<div style="clear:both;"></div>
-								</form>
-							</div>
-						</div>
-						<!-- .entry-content -->
-						<footer class="entry-meta"><span class="edit-link"><a class="post-edit-link" href="http://teamvraavos.cafe24.com/wp-admin/post.php?post=2&amp;action=edit">Edit</a></span>
-						</footer>
-					</article>
 					<!-- #post-## -->
 				</div>
 				<div class="clear"></div>
@@ -192,31 +103,6 @@
 
 		<div id="footer-wrapper">
 			<footer class="footer">
-				<div class="footer-col-1">
-					<h2>About teambraavos</h2>
-					<p>여기 우리 소개</p>
-				</div>
-
-				<div class="footer-col-1">
-					<h2>Recent Posts</h2>
-					<ul class="recent-post">
-						<li>
-							<a href="http://teamvraavos.cafe24.com/?p=15">
-								<p>아아아아아 안녕하세요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ야야야야 &nbsp;</p>
-								<br>
-								<span>Read more...</span>
-							</a>
-						</li>
-						<li>
-							<a href="http://teamvraavos.cafe24.com/?p=1">
-								<p>워드프레스에 오신 것을 환영합니다. 이것은 첫번째 글입니다. 이 글을 고치거나…</p>
-								<br>
-								<span>Read more...</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-
 				<div class="footer-col-3">
 					<h2>Teambraavos</h2>
 					<p>Nuritkumsquare 6F 601, 1605, Sangam-dong, Mapo-gu, Seoul, Korea</p>
@@ -240,7 +126,6 @@
 			</div>
 		</div>
 
-		<script type="text/javascript" src="http://teamvraavos.cafe24.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.2"></script>
 	<script src="app/index.js"></script>
 		<script type="text/javascript">
 			function scroll(id) {
@@ -248,6 +133,13 @@
 					scrollTop: $("#" + id).offset().top
 				}, 500);
 			}
+
+			function pageLoad(url){	
+				document.title=url;
+				$('#sitemain').load(url)
+				scroll('logo')
+			}
+
 		</script>
 </body>
 

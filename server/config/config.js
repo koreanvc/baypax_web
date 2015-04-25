@@ -10,7 +10,7 @@ var path = require('path'),
 			port: 6379
 		},
 		webServer: {
-			port: 8081,
+			port: 8080,
 			ip: '0.0.0.0'
 		}
 	};
