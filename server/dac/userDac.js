@@ -43,7 +43,8 @@ module.exports = {
     				console.error(err);
     				callback(err);
     			}
-    			console.log(query);
+    			//console.log(query);
+    			console.log(result);
     			callback(null,result);
     		})
     	}
