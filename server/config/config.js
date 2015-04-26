@@ -12,5 +12,12 @@ var path = require('path'),
 		webServer: {
 			port: 8080,
 			ip: '0.0.0.0'
+		},
+		mysql:{
+			host:'localhost',
+			port:3306,
+			user:'baypax',
+			password:'baypax',
+			database:'baypax'
 		}
 	};

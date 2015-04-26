@@ -3,7 +3,7 @@
 var config = require('../config/config'),
 	router = require('express').Router(),
   layout=require('express-layout'),
-	serverBiz = require('../biz/serverBiz');
+	userBiz = require('../biz/userBiz');
 
 module.exports = function(app) {
 
@@ -31,12 +31,26 @@ module.exports = function(app) {
     res.render('app/login.html', {title:'LogIn | BAYPAX'});
   });
 
-  router.post('/loginAction',function(req,res,next){
-    var id=req.body.userId;
+  router.get('/register', function(req, res, next) {
+    res.render('app/register.html', {title:'LogIn | BAYPAX'});
+  });
+
+  router.post('/login',function(req,res,next){
+    var mail=req.body.userId;
     var pwd=req.body.pwd;
-    console.log(id+'/'+pwd);
+    console.log(mail+'/'+pwd);
     var callback=sendDataCallback(res,next);
-    callback('test');
+    userBiz.logIn(mail,pwd,callback);
+  })
+
+  router.post('/register',function(req,res,next){
+    var mail=req.body.userId;
+    var name=req.body.userName;
+    var pwd=req.body.pwd;
+    console.log(mail+name+pwd);
+    var callback=sendDataCallback(res,next);
+    userBiz.register(mail,name,pwd,callback);
+
   })
 
 	/*
