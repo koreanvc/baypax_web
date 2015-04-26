@@ -121,7 +121,7 @@ a.nivo-nextNav {
 }
 .nivo-controlNav a {
     border: 0 none;
-    display: inline-block;
+    display: none;
     height: 22px;
     margin: 0 2px;
     text-indent: -9999px;
@@ -135,7 +135,7 @@ a.nivo-nextNav {
 .nivo-directionNav a {
     background:url(../images/slide-nav.png) no-repeat scroll 0 0 #000000;
     border: 0 none;
-    display: block;
+    display: none;
     height: 43px;
     opacity: 0;
     text-indent: -9999px;

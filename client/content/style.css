@@ -41,11 +41,11 @@ ul{ list-style:none; margin:0; padding:0;}
 .main-container ol li{margin:5px 0;}
 .toggleMenu{display:none;}
 section{ padding:87px 0 40px; border-bottom:1px solid #e6e6e6;}
-section h2 {font-weight:700; font-size:38px; padding:0 0 50px 0; text-align:center; text-transform:uppercase; color:#404040; font-family:'Roboto Condensed',san-serif;}
+section h2 {font-weight:700; font-size:38px; padding:0 0 50px 0; text-align:center; text-transform:uppercase; color:#404040; font-family:'Roboto Condensed',sans-serif;}
 a.contact-button{ visibility:hidden; width:15%; margin:0 auto;}
 
 #slider{ width:100%; margin:0; padding:0; position:relative;}
-.top-bar{ margin:0; padding:16px 0 20px; position:absolute; width:100%; top:120px; text-align:center; font-family:'Roboto'san-serif; color:#ffffff; z-index:99;}
+.top-bar{ margin:0; padding:16px 0 20px; position:absolute; width:100%; top:120px; text-align:center; font-family:'Roboto',sans-serif; color:#ffffff; z-index:99;}
 .top-bar h1{font-weight:900;  font-size:58px; padding:0 0 20px 0; text-align:center; text-transform:uppercase;}
 .top-bar p{ color:#ffffff; font-weight:normal; font-size:16px; margin:0 0 30px 0; line-height:24px; text-align:center;}
 .top-bar a, .contact-banner a{ font:700 26px 'Roboto', sans-serif; padding:10px 40px; margin-top:21px; text-transform:uppercase; display:inline-block; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; -o-border-radius:4px; -ms-border-radius:4px; color:#ffffff;}
@@ -118,7 +118,7 @@ body.home .fixed, body.blog .fixed{position:fixed !important; top:0 !important; 
 .fixed .header-inner .logo{ margin-top:12px !important;}
 .header .header-inner{ margin:0 auto; padding:0; position:relative; width:1160px;}
 .header .header-inner .logo{margin:0; padding:0; }
-.header .header-inner .logo h1{ font-weight:700; text-transform:uppercase; font-family:'Roboto',san-serif; font-size:28px; }
+.header .header-inner .logo h1{ font-weight:700; text-transform:uppercase; font-family:'Roboto',sans-serif; font-size:28px; }
 .header .header-inner .logo a{ color:#3e3e3e;}
 .container{ width:1160px; margin:0 auto; padding:0; position:relative;}
 .toggle{display:none;}
@@ -231,8 +231,8 @@ body.home .fixed, body.blog .fixed{position:fixed !important; top:0 !important; 
 .footer { width:1160px; margin:auto;}
 .footer-col-1 { width:30%; float:left; margin:0 55px 50px 0;}
 .footer-col-3 { width:30%; float:left; margin:0 0 50px 0; }
-.footer-col-1 h2 { font-weight:normal; font-size:22px; margin-bottom:20px; text-transform:uppercase; font-family:'Roboto Condensed',san-serif; color:#2c2c2c; }
-.footer-col-3 h2 { font-weight:700; font-size:30px; margin-bottom:7px; text-transform:uppercase; font-family:'Roboto Condensed',san-serif; color:#2c2c2c;} 
+.footer-col-1 h2 { font-weight:normal; font-size:22px; margin-bottom:20px; text-transform:uppercase; font-family:'Roboto Condensed',sans-serif; color:#2c2c2c; }
+.footer-col-3 h2 { font-weight:700; font-size:30px; margin-bottom:7px; text-transform:uppercase; font-family:'Roboto Condensed',sans-serif; color:#2c2c2c;} 
 
 .footer-nav { margin:0; padding:0;}
 .footer-nav li { display:block; padding:0;}
@@ -259,7 +259,7 @@ body.home .fixed, body.blog .fixed{position:fixed !important; top:0 !important; 
 .design-by { float:right; font-family:arial; color:#757575;}
 
 /* ------ Contact Form ------ */
-.wpcf7{ margin:0; padding:0; font:15px 'Roboto',san-serif; color:#ffffff;}
+.wpcf7{ margin:0; padding:0; font:15px 'Roboto',sans-serif; color:#ffffff;}
 .wpcf7 form{ margin:0; padding:0;}
 .wpcf7 form span.last{ float:none !important;}
 .wpcf7 form input[type="text"], .wpcf7 form input[type="email"], .wpcf7 form input[type="tel"], .wpcf7 form input[type="url"], .wpcf7 form input[type="date"], .wpcf7 form select{ background-color:#f1f1f1; border:1px solid #cccccc; padding:5px 3px; margin-top:10px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px; font:13px arial; color:#777777;}
@@ -270,7 +270,7 @@ span.wpcf7-list-item{ margin:0 15px 0 0 !important;}
 
 /* --- skills bar --- */
 .skillbar {position:relative; display:block; margin-bottom:15px; width:100%; background:#eee; height:35px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; -webkit-transition:0.4s linear; -moz-transition:0.4s linear; -ms-transition:0.4s linear; -o-transition:0.4s linear; transition:0.4s linear; -webkit-transition-property:width, background-color; -moz-transition-property:width, background-color; -ms-transition-property:width, background-color; -o-transition-property:width, background-color; transition-property:width, background-color; margin-top:25px;}
-.skillbar-title { font:16px 'Roboto',san-serif; background:#141414; color:#8e8d8d;}
+.skillbar-title { font:16px 'Roboto',sans-serif; background:#141414; color:#8e8d8d;}
 .skillbar-title span { display:block; background-color:transparent; color:#8e8d8d; padding:0; height:35px; line-height:35px;}
 .skillbar-bar { height:6px; width:0px; background:#00a8ff;}
 .skill-bar-percent { position:absolute; right:0; top:0; font-size:15px; height:35px; line-height:35px; color:#8e8d8d;}
@@ -562,7 +562,7 @@ a.button.added:before{content:'' !important;}
 textarea.wp-editor-area{border:1px #ccc solid;}
 .woocommerce input[type=text], .woocommerce textarea{border:1px #ccc solid; padding:4px;}
 form.woocommerce-ordering select{ padding:5px; color:#777777;}
-.woocommerce table.shop_table th, .woocommerce-page table.shop_table th{ font-family:'Roboto Condensed',san-serif; color:#00a8ff;}
+.woocommerce table.shop_table th, .woocommerce-page table.shop_table th{ font-family:'Roboto Condensed',sans-serif; color:#00a8ff;}
 
 .hdr_buy_pro{font-size:14px; font-weight:bold; line-height:18px;}
 .hdr_buy_pro a{color:#fff; background:#00a8ff; padding:3px 10px;}

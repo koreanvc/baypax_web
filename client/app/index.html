@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="../content/style.css">
 	<link rel="stylesheet" href="../content/css/theme-responsive.css">
 	<link rel="stylesheet" href="../content/css/font.css">
+	<link rel="stylesheet" href="../content/css/font2.css">
+	<link rel="stylesheet" href="../content/css/font-awesome.min.css">
 	<link href="../content/css/signin.css" rel="stylesheet">
 	<title><%- title %></title>
 <!--
@@ -39,15 +41,9 @@
 			<br>
 			<br>
 			<a href="javascript:pageLoad('/reservation')">Reservation</a>
-			<br>
-			<br>
-			<a href="javascript:pageLoad('/login')">LogIn</a>
-			<br>
-			<br>
-			<a href="#">Current Status</a> 
 		</div>
 		<!-- top-bar -->
-		<a style="z-index:10" href="javascript:scroll('main-view');" class="arrow-down"></a>
+		<a style="z-index:10" href="javascript:scrollTop();" class="arrow-down"></a>
 		<!-- slider -->
 	</div>
 	<!-- slider-main -->
@@ -74,7 +70,7 @@
 					<ul id="menu-%eb%a9%94%eb%89%b4-1" class="menu">
 						<li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-70"><a href="#">Main</a>
 						</li>
-						<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="#">Service</a>
+						<li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="javascript:pageLoad('/login')">Service</a>
 						</li>
 						<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="#">Reservation</a>
 						</li>
@@ -140,15 +136,19 @@
 				
 			}
 
-			function pageLoad(url){	
-				document.title=url;
-				$('#sitemain').load(url)
+			function scrollTop(){
 				if($(window).width()>719){
 					scroll('scrollTop');
 				}
 				else{
 					scroll('mobileScrollTop');
 				}
+			}
+
+			function pageLoad(url){	
+				document.title=url;
+				$('#sitemain').load(url)
+				scrollTop();
 			}
 
 		</script>
