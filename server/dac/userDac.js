@@ -32,23 +32,18 @@ module.exports = {
   },
 
   selectUser: function (email, callback) {
-    connection.connect(function(err){
-    	if(err){
-    		console.error('mysql connection error');
-    		callback(err);
-    	}
-    	else{
-    		var query=connection.query('select user_mail,user_name from users where user_mail='+mysql.escape(email),function(err,result){
-    			if(err){
-    				console.error(err);
-    				callback(err);
-    			}
-    			//console.log(query);
-    			console.log(result);
-    			callback(null,result);
-    		})
-    	}
-    })
+    
+	var query=connection.query('select user_mail,user_name from users where user_mail='+mysql.escape(email),function(err,result){
+		if(err){
+			console.error(err);
+			callback(err);
+		}
+		//console.log(query);
+		else{
+			console.log(result);
+			callback(null,result);
+		}
+	})
   },
 
   selectAllServers: function (callback) {
