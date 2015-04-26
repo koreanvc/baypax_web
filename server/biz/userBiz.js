@@ -13,7 +13,7 @@ module.exports = {
       }
       else{
         console.log(data);
-        callback(data);
+        callback(JSON.stringify(data);
       }
     })
   },
