@@ -13,22 +13,17 @@ module.exports = {
 		'user_name':name,
 		'user_pwd':pwd
 	}
-    connection.connect(function(err){
-    	if(err){
-    		console.error('mysql connection error');
-    		callback(err);
-    	}
-    	else{
-    		var query=connection.query('insert into users set ?',user,function(err,result){
-    			if(err){
-    				console.error(err);
-    				callback(err);
-    			}
-    			console.log(query);
-    			callback(null,result);
-    		})
-    	}
-    })
+	var query=connection.query('insert into users set ?',user,function(err,result){
+		if(err){
+			console.error(err);
+			callback(err);
+		}
+		else{
+			//console.log(query);
+			callback(null,result);
+		}
+	})
+
   },
 
   selectUser: function (email, callback) {
@@ -40,7 +35,7 @@ module.exports = {
 		}
 		//console.log(query);
 		else{
-			console.log(result);
+			//console.log(result);
 			callback(null,result);
 		}
 	})

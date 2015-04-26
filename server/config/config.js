@@ -5,16 +5,12 @@ var path = require('path'),
 
 	module.exports = {
 		root: rootPath,
-		redis: {
-			host: '192.168.0.28',
-			port: 6379
-		},
 		webServer: {
 			port: 8080,
 			ip: '0.0.0.0'
 		},
 		mysql:{
-			host:'localhost',
+			host:'192.168.0.19',
 			port:3306,
 			user:'baypax',
 			password:'baypax',
