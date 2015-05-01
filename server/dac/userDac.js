@@ -12,10 +12,10 @@ module.exports = {
     	'user_mail':email,
 		'user_name':name,
 		'user_pwd':pwd
-	}
+	};
 	var query=connection.query('insert into users set ?',user,function(err,result){
 		if(err){
-			console.error(err);
+			//console.error(err);
 			callback(err);
 		}
 		else{

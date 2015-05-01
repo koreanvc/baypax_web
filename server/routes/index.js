@@ -45,7 +45,7 @@ module.exports = function(app) {
     console.log(mail+'/'+pwd);
     var callback=sendDataCallback(res,next);
     userBiz.logIn(mail,pwd,callback);
-  })
+  });
 
   router.post('/register',function(req,res,next){
     var mail=req.body.userId;
@@ -55,7 +55,7 @@ module.exports = function(app) {
     var callback=sendDataCallback(res,next);
     userBiz.register(mail,name,pwd,callback);
 
-  })
+  });
 
 	/*
   router.post('/signIn',function(req,res,next){
