@@ -40,7 +40,8 @@ seq int NOT NULL AUTO_INCREMENT,
 user_mail varchar(50) NOT NULL,
 user_name varchar(50) NOT NULL,
 user_pwd varchar(500) NOT NULL,
-PRIMARY KEY(seq));
+PRIMARY KEY(seq)
+UNIQUE(user_mail));
 
 
 
