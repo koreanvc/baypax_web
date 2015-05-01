@@ -10,7 +10,7 @@ var path = require('path'),
 			ip: '0.0.0.0'
 		},
 		mysql:{
-			host:'192.168.0.19',
+			host:'192.168.0.13',
 			port:3306,
 			user:'baypax',
 			password:'baypax',

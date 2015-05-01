@@ -21,16 +21,27 @@
 
 
 - mysql 설치
-- /server/config/config.js 수정할것 
+- /server/config/config.js 수정할것 (설치한 서버 주소 및 포트번호 수정 default 3306)
 
 - 현재 테스트한 테이블은 users 하나!
+
+< 설치 후 해야 할 것들 >
+- 사용자 추가
+use mysql
+create user ‘아이디’@‘%’ identified by ‘비번’; //%는 외부접근 허용한다는 의미, 허용 안하면 %대신 localhost
+
+- DB추가
+create database baypax
+use baypax
+
 
 create table users (
 seq int NOT NULL AUTO_INCREMENT,
 user_mail varchar(50) NOT NULL,
 user_name varchar(50) NOT NULL,
 user_pwd varchar(500) NOT NULL,
-PRIMARY KEY(seq));
+PRIMARY KEY(seq)
+UNIQUE(user_mail));
 
 
 
