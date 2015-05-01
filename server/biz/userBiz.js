@@ -12,8 +12,18 @@ module.exports = {
         callback(err);
       }
       else{
-        console.log(data);
-        callback(JSON.stringify(data));
+        if(data!=""){
+          callback(null,JSON.stringify({code:-1}));
+        }else{
+          userDac.insertUser(mail,name,pwd,function(err,data){
+            if(err){
+              callback(err);
+            }
+            else{
+              callback(null,JSON.stringify({code:1}))
+            }
+          })
+        }
       }
     })
   },
