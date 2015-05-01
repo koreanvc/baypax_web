@@ -18,16 +18,16 @@
 	<title><%- title %></title>
 <!--
 	<title>BAYPAX | teambraavos</title>-->
-	<style>.top-bar a, .contact-banner a, input.search-submit, .post-password-form input[type=submit], .icon:hover, .newsletter-form input[type="submit"]{background-color:#00a8ff;}.header .header-inner .nav ul li a:hover, .newsletter h2 span, .recent-post li span, .phone-no strong, a{color:#00a8ff}.more:hover{background:#00a8ff url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/white-arrow.png) no-repeat scroll center center}.our-projects img:hover{ background:#00a8ff; float:left; background:url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/camera-icon.png) 50% 50% no-repeat #00a8ff; }</style>
+	<style>.top-bar a.top-menu, .contact-banner a, input.search-submit, .post-password-form input[type=submit], .icon:hover, .newsletter-form input[type="submit"]{background-color:#00a8ff;}.header .header-inner .nav ul li a:hover, .newsletter h2 span, .recent-post li span, .phone-no strong, a{color:#00a8ff}.more:hover{background:#00a8ff url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/white-arrow.png) no-repeat scroll center center}.our-projects img:hover{ background:#00a8ff; float:left; background:url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/camera-icon.png) 50% 50% no-repeat #00a8ff; }</style>
 	<style type="text/css">
-		
+
 	</style>
 </head>
 
 <body>
 
 	<div class="slider-main">
-		
+
 		<div id="slider" class="nivoSlider">
 			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/xIsiRLngSRWN02yA2BbK_submission-photo-7.jpg" />
 			<img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg" />
@@ -40,10 +40,11 @@
 			Make one more day on your trip.
 			<br>
 			<br>
-			<a href="javascript:pageLoad('/reservation')">Reservation</a>
+			<a href="javascript:pageLoad('/reservation')" class="top-menu">Reservation</a>
+            <a style="z-index:10" href="javascript:scrollTop();" class="arrow-down"></a>
 		</div>
 		<!-- top-bar -->
-		<a style="z-index:10" href="javascript:scrollTop();" class="arrow-down"></a>
+
 		<!-- slider -->
 	</div>
 	<!-- slider-main -->
@@ -129,11 +130,11 @@
 	<script src="app/index.js"></script>
 		<script type="text/javascript">
 			function scroll(id) {
-			
+
 				$('html, body').animate({
 					scrollTop: $("#" + id).offset().top
 				}, 500);
-				
+
 			}
 
 			function scrollTop(){
@@ -145,7 +146,7 @@
 				}
 			}
 
-			function pageLoad(url){	
+			function pageLoad(url){
 				document.title=url;
 				$('#sitemain').load(url)
 				scrollTop();
