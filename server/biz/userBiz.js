@@ -17,7 +17,7 @@ module.exports = {
         } else {
           userDac.insertUser(mail, name, pwd, function (err, data) {
             if (err) {
-              console.log(err);
+              //console.log(err);
               callback(null, JSON.stringify({code: -1}));
             }
             else if (data.affectedRows == 1) {
