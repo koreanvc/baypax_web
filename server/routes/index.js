@@ -20,23 +20,39 @@ module.exports = function(app) {
 	// render page
 	router.get('/', function(req, res, next) {
 		// TODO: userId is always 1
-		res.render('app/index.html', {title:'test'});
+		res.render('app/index.html', {title:'BAYPAX'});
 	});
 
   router.get('/reservation', function(req, res, next) {
-    res.render('app/reservation.html', {title:'Reservation | BAYPAX'});
+    res.render('app/menu/reservation.html');
   });
 
   router.get('/login', function(req, res, next) {
-    res.render('app/login.html', {title:'LogIn | BAYPAX'});
+    res.render('app/menu/login.html');
   });
 
   router.get('/register', function(req, res, next) {
-    res.render('app/register.html', {title:'LogIn | BAYPAX'});
+    res.render('app/menu/register.html');
+  });
+
+  router.get('/how', function(req, res, next) {
+    res.render('app/menu/how.html');
+  });
+
+  router.get('/home', function(req, res, next) {
+    res.render('app/menu/home.html');
+  });
+
+  router.get('/booking', function(req, res, next) {
+    res.render('app/menu/booking.html');
+  });
+
+  router.get('/faq', function(req, res, next) {
+    res.render('app/menu/faq.html');
   });
 
   router.get('/test', function(req, res, next){
-    res.render('app/test.html');
+    res.render('app/menu/test.html');
   });
 
   router.post('/login',function(req,res,next){

@@ -45,11 +45,10 @@
 <div class="slider-main">
 
     <div id="slider" class="nivoSlider">
-        <img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/xIsiRLngSRWN02yA2BbK_submission-photo-7.jpg"/>
-        <img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg"/>
-        <img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/photo-1422222948315-28aadb7a2cb8.jpg"/>
-        <img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/eDLHCtzRR0yfFtU0BQar_sylwiabartyzel_themap.jpg"/>
-        <img src="http://teamvraavos.cafe24.com/wp-content/uploads/2015/04/2e9b0cb2.jpg"/>
+        <img src="../content/images/pics/main_1.jpg"/>
+        <img src="../content/images/pics/main_2.jpg"/>
+        <img src="../content/images/pics/main_3.jpg"/>
+        <img src="../content/images/pics/main_4.jpg"/>
     </div>
     <div class="top-bar">
         <h1>BAYPAX</h1>
@@ -85,19 +84,19 @@
         <!-- toggle -->
         <div class="nav" style="display: block;">
             <div class="menu-container">
-                <ul id="menu-%eb%a9%94%eb%89%b4-1" class="menu">
+                <ul class="menu">
                     <li id="menu-item-70"
                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a
-                            href="#">Home</a>
+                            href="javascript:pageLoad('/home')">Home</a>
                     </li>
-                    <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="">How
+                    <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/how')">How
                         it works</a>
                     </li>
-                    <li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Reservation</a>
+                    <li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/reservation')">Reservation</a>
                     </li>
-                    <li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">FAQ</a>
+                    <li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/faq')">FAQ</a>
                     </li>
-                    <li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">My
+                    <li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/booking')">My
                         bookings</a>
                     </li>
                     <li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page"><a
@@ -177,6 +176,7 @@
             $('#sitemain').load(url)
             scrollTop();
         }
+        pageLoad('/home');
 
     </script>
 </body>
