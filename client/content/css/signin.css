@@ -1,9 +1,13 @@
-
-
+.signin-container{
+    width:100%;
+    margin-bottom: 100px;
+    text-align:center;
+}
 .form-signin {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  text-align:left;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
