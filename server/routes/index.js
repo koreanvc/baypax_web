@@ -35,6 +35,10 @@ module.exports = function(app) {
     res.render('app/register.html', {title:'LogIn | BAYPAX'});
   });
 
+  router.get('/test', function(req, res, next){
+    res.render('app/test.html');
+  });
+
   router.post('/login',function(req,res,next){
     var mail=req.body.userId;
     var pwd=req.body.pwd;
