@@ -1,5 +1,6 @@
 var config = require('../config/config'),
-  userDac = require('../dac/userDac');
+  userDac = require('../dac/userDac'),
+  bcrypt=require('bcrypt');
 
 module.exports = {
   logIn: function (mail, pwd, callback) {
@@ -29,8 +30,8 @@ module.exports = {
     });
   },
 
-  getServerList: function (callback) {
-    callback(null, JSON.stringify(config.pm2servers));
+  encryptPwd: function (pwd, callback) {
+    callback(null);
   }
 }
 ;
