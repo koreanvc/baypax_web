@@ -62,8 +62,20 @@ module.exports = function (app) {
     var mail = req.body.userId;
     var pwd = req.body.pwd;
     console.log(mail + '/' + pwd);
-    var callback = sendDataCallback(res, next);
-    userBiz.logIn(mail, pwd, callback);
+    //var callback = sendDataCallback(res, next);
+    userBiz.logIn(mail, pwd, function(err,data){
+      if(err){
+        next(err);
+      }
+      else{
+        if(data.code>0){
+          res.status(200).send('<script type="text/javascript">alert("성공"); location.relo</script>')
+        }
+        else{
+          res.status(200).send('<script type="text/javascript">alert("실패")</script>')
+        }
+      }
+    });
   });
 
   router.post('/register', function (req, res, next) {
