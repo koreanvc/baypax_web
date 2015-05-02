@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+
+    <link href="../content/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -14,6 +16,7 @@
     <link rel="stylesheet" href="../content/css/font.css">
     <link rel="stylesheet" href="../content/css/font2.css">
     <link rel="stylesheet" href="../content/css/font-awesome.min.css">
+    <link href="../content/css/menu-style.css" rel="stylesheet">
     <link href="../content/css/signin.css" rel="stylesheet">
     <title><%- title %></title>
     <!--
@@ -25,16 +28,7 @@
     .header .header-inner .nav ul li a:hover, .newsletter h2 span, .recent-post li span, .phone-no strong, a {
         color: #00a8ff
     }
-
-    .more:hover {
-        background: #00a8ff url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/white-arrow.png) no-repeat scroll center center
-    }
-
-    .our-projects img:hover {
-        background: #00a8ff;
-        float: left;
-        background: url(http://teamvraavos.cafe24.com/wp-content/themes/skt-white/images/camera-icon.png) 50% 50% no-repeat #00a8ff;
-    }</style>
+    </style>
     <style type="text/css">
 
     </style>
@@ -70,7 +64,7 @@
     <div id="scrollTop"></div>
     <div class="header-inner">
         <div id='logo' class="logo">
-<a href="/">
+            <a href="/">
                 <h1>BAYPAX</h1>
 
             </a>
@@ -91,14 +85,17 @@
                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a
                             href="javascript:pageLoad('/home')">Home</a>
                     </li>
-                    <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/how')">How
+                    <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="javascript:pageLoad('/how')">How
                         it works</a>
                     </li>
-                    <li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/reservation')">Reservation</a>
+                    <li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="javascript:pageLoad('/reservation')">Reservation</a>
                     </li>
                     <li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/partners')">Partners</a>
                     </li>
-                    <li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/booking')">My
+                    <li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="javascript:pageLoad('/booking')">My
                         bookings</a>
                     </li>
                     <li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page"><a
@@ -108,9 +105,6 @@
             </div>
         </div>
         <!-- nav -->
-
-
-
         <div class="clear"></div>
     </div>
     <!-- header-inner -->
@@ -181,7 +175,7 @@
             $('#sitemain').load(url)
             scrollTop();
         }
-        pageLoad('/home');
+        pageLoad('/<%- path?path:"home" %>');
 
     </script>
 </body>

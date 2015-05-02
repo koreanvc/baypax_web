@@ -44,7 +44,7 @@ section{ padding:87px 0 40px; border-bottom:1px solid #e6e6e6;}
 section h2 {font-weight:700; font-size:38px; padding:0 0 50px 0; text-align:center; text-transform:uppercase; color:#404040; font-family:'Roboto Condensed',sans-serif;}
 a.contact-button{ visibility:hidden; width:15%; margin:0 auto;}
 
-#slider{ width:100%; margin:0; padding:0; position:relative;}
+#slider{ width:100%; max-height:700px; margin:0; padding:0; position:relative;}
 .top-bar{ margin:0; padding:16px 0 20px; position:absolute; width:100%; top:120px; text-align:center; font-family:'Roboto',sans-serif; color:#ffffff; z-index:99;}
 .top-bar h1{font-weight:900;  font-size:58px; padding:0 0 20px 0; text-align:center; text-transform:uppercase;}
 .top-bar p{ color:#ffffff; font-weight:normal; font-size:16px; margin:0 0 30px 0; line-height:24px; text-align:center;}

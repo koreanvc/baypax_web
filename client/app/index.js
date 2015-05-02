@@ -97,7 +97,7 @@ jQuery(window).bind('resize orientationchange', function() {
 });
 
 var skt_white_adjustMenu = function() {
-	if (skt_white_nav < 900) {
+	if (skt_white_nav < 930) {
 		jQuery(".toggleMenu").css("display", "block");
 		if (!jQuery(".toggleMenu").hasClass("active")) {
 			jQuery(".nav").hide();

@@ -1,5 +1,6 @@
 var config = require('../config/config'),
-  userDac = require('../dac/userDac');
+  userDac = require('../dac/userDac'),
+  bcrypt=require('bcrypt');
 
 module.exports = {
   logIn: function (mail, pwd, callback) {
@@ -17,7 +18,7 @@ module.exports = {
         } else {
           userDac.insertUser(mail, name, pwd, function (err, data) {
             if (err) {
-              console.log(err);
+              //console.log(err);
               callback(null, JSON.stringify({code: -1}));
             }
             else if (data.affectedRows == 1) {
@@ -29,8 +30,8 @@ module.exports = {
     });
   },
 
-  getServerList: function (callback) {
-    callback(null, JSON.stringify(config.pm2servers));
+  encryptPwd: function (pwd, callback) {
+    callback(null);
   }
 }
 ;
