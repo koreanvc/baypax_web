@@ -55,6 +55,11 @@ module.exports = function(app) {
     res.render('app/menu/test.html');
   });
 
+  //Saehyun code
+  router.get('/partners', function(req, res, next){
+    res.render('app/menu/partners.html');
+  });
+
   router.post('/login',function(req,res,next){
     var mail=req.body.userId;
     var pwd=req.body.pwd;
