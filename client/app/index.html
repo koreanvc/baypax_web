@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../content/css/font-awesome.min.css">
     <link href="../content/css/menu-style.css" rel="stylesheet">
     <link href="../content/css/signin.css" rel="stylesheet">
+    <link href="../content/css/register.css" rel="stylesheet">
     <title><%- title %></title>
     <!--
         <title>BAYPAX | teambraavos</title>-->
@@ -77,29 +78,27 @@
         <!-- toggle -->
 
 
-
         <div class="nav" style="display: block;">
             <div class="menu-container">
                 <ul class="menu">
                     <li id="menu-item-70"
-                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a
-                            href="javascript:pageLoad('/home')">Home</a>
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home">
+                        <a href="javascript:pageLoad('/home')">Home</a>
                     </li>
-                    <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                            href="javascript:pageLoad('/how')">How
-                        it works</a>
+                    <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="javascript:pageLoad('/how')">How it works</a>
                     </li>
-                    <li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                            href="javascript:pageLoad('/reservation')">Reservation</a>
+                    <li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="javascript:pageLoad('/reservation')">Reservation</a>
                     </li>
-                    <li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/partners')">Partners</a>
+                    <li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="javascript:pageLoad('/partners')">Partners</a>
                     </li>
-                    <li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                            href="javascript:pageLoad('/booking')">My
-                        bookings</a>
+                    <li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="javascript:pageLoad('/booking')">My bookings</a>
                     </li>
-                    <li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                            href="javascript:pageLoad('/login')">LogIn</a>
+                    <li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="javascript:pageLoad('/login')">LogIn</a>
                     </li>
                 </ul>
             </div>
@@ -171,11 +170,12 @@
         }
 
         function pageLoad(url) {
-            document.title = url;
             $('#sitemain').load(url)
+            if($('.nav').css('display')!='none'){
+                $('.nav').slideToggle('fast');
+            }
             scrollTop();
         }
-        pageLoad('/<%- path?path:"home" %>');
 
     </script>
 </body>

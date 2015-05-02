@@ -40,10 +40,16 @@ seq int NOT NULL AUTO_INCREMENT,
 user_mail varchar(50) NOT NULL,
 user_name varchar(50) NOT NULL,
 user_pwd varchar(500) NOT NULL,
+c_code char(3) NOT NULL,
 PRIMARY KEY(seq)
 UNIQUE(user_mail));
 
-
+create table country (
+code_a3 char(3) Not null,
+name varchar(100) not null,
+code_a2 char(2) not null,
+code_num int not null,
+primary key(code_a3));
 
 
 웹페이지 관련: client 폴더

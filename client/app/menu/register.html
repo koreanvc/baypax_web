@@ -1,53 +1,99 @@
-
 <div class="container">
 
 
-    <div class="signin-container">
-        <form class="form-signin">
-            <h2 class="form-signin-heading">Register</h2>
-            <input id="userId" style="width:100%" type="text" class="form-control" placeholder="Email address" autofocus
+    <div class="register-container">
+        <form class="form-register" onsubmit="return false">
+            <h2 class="form-register-heading">Register</h2>
+            <hr/>
+            <input id="mail" type="text" class="form-control" placeholder="Email address" autofocus
                    required>
-            <input id="userName" style="width:100%" type="text" class="form-control" placeholder="Name" required>
-            <input id="pwd" style="width:100%" type="password" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-success" type="button" style="width:100%;" onclick="javascript:register()">Register</button>
+            <input id="pwd" type="password" class="form-control" placeholder="Password" required>
+            <input id="cPwd" type="password" class="form-control" placeholder="Confirm password" required>
+            <hr/>
+            <input id="name" type="text" class="form-control" placeholder="Name" required>
+            <select id="country" class="form-control" style="color:#999" onchange="countryChange()">
+
+            </select>
+            <input class="btn btn-lg btn-success" type="submit" onclick="register()" value="Register"/>
         </form>
 
     </div>
     <!-- /container -->
 </div>
 <script type="text/javascript">
+    function getCountryList(){
+        $.ajax({
+            type:"GET",
+            url:"/getCountry",
+            dataType:"JSON",
+            success:function(data){
+                //console.log(data);
+                $('#country').html('<option value="" disabled selected style="display:none;">Country</option>');
+                for(var i=0;i<data.length;i++){
+                    $('#country').append('<option value='+data[i].code_a3+'>'+data[i].name+'</option>');
+                }
+            },
+            error: function (xhr, status, error) {
+            }
+        })
+    }
+
+    function countryChange() {
+        if ($('#country').val() != "") {
+            $('#country').css('color','black');
+        }
+    }
+
     function register() {
-        var userId = $('#userId').val()
-        var userName = $('#userName').val()
-        var pwd = $('#pwd').val()
+        if (!registerValidation()) {
+            return;
+        }
+        var mail = $('#mail').val();
+        var name = $('#name').val();
+        var pwd = $('#pwd').val();
+        var cCode=$('#country').val();
 
         $.ajax({
             type: "POST",
             url: "/register",
             dataType: "JSON",
             data: {
-                "userId": userId,
-                "userName": userName,
-                "pwd": pwd
+                "mail": mail,
+                "name": name,
+                "pwd": pwd,
+                "cCode": cCode
             },
             success: function (data) {
                 console.log(data);
-                if (data.code == -1) {
-                    alert('이미 가입됐음 ')
+                if (data.code < 0) {
+                    alert(data.msg)
                 }
                 else {
                     alert('가입성공!')
+                    pageLoad('/login');
                 }
             },
-            complete: function (data) {
-            },
             error: function (xhr, status, error) {
-                console.log(xhr);
-                console.log(status);
-                console.log(error);
-                alert(xhr + status + error);
             }
         });
     }
+    function registerValidation() {
+        var essentialInputs = ['mail', 'pwd', 'cPwd', 'name', 'country'];
+        for (var i = 0; i < essentialInputs.length; i++) {
+            var element = document.getElementById(essentialInputs[i]);
+            if (element.value == "") {
+                alert('필수 입력 사항을 모두 입력해주세요');
+                element.focus();
+                return false;
+            }
+        }
+        if($('#pwd').val()!=$('#cPwd').val()){
+            alert('비밀번호 일치하지 않음');
+            document.getElementById('cPwd').focus();
+            return false;
+        }
+        return true;
+    }
+    getCountryList();
 
 </script>

@@ -1,18 +1,18 @@
-
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
 <div class="container">
 
 
     <div class="signin-container">
-        <form class="form-signin" method="post" action="/login">
+        <form class="form-signin" onsubmit="return false">
         <h2 class="form-signin-heading">Log in</h2>
-        <input name="userId" style="width:100%" type="text" class="form-control" placeholder="Email address" autofocus required>
-        <input name="pwd" style="width:100%" type="password" class="form-control" placeholder="Password" required>
+        <input id="mail" style="width:100%" type="text" class="form-control" placeholder="Email address" autofocus required>
+        <input id="pwd" style="width:100%" type="password" class="form-control" placeholder="Password" required>
 
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>
 
-            <button class="btn btn-info btn-lg" type="submit" style="width:100%;" >Log in</button>
+            <button class="btn btn-info btn-lg" style="width:100%;" onclick="login()" >Log in</button>
             <br/>
             <a href="javascript:pageLoad('/register')">Register</button>
         </form>
@@ -20,5 +20,54 @@
     </div> <!-- /container -->
 </div>
 <script type="text/javascript">
-    function
+    function login(){
+        //var mail=$('#mail').val();
+        //var pwd=$('#pwd').val();
+        var mail = document.getElementById('mail');
+        var pwd = document.getElementById('pwd');
+        loginValidation(mail,pwd,function(cMail,cPwd){
+            $.ajax({
+                type: "POST",
+                url: "/login",
+                dataType: "JSON",
+                data:{
+                    userId:cMail,
+                    pwd:cPwd
+                },
+                success: function(data) {
+
+                    console.log(data);
+                    if(data.code>0){
+                        alert('성공');
+                        location.href='/';
+                    }
+                    else{
+                        alert(data.msg);
+                    }
+                    //callback(data);
+                },
+                error: function(xhr, status, error) {
+                    alert("에러발생");
+                }
+            });
+        });
+
+
+    }
+
+    function loginValidation(mail,pwd,callback){
+        var strMail=mail.value.replace(" ","");
+        var strPwd=pwd.value;
+        if(strMail==""){
+            alert("이메일 입력!!");
+            mail.focus();
+        }
+        else if(strPwd==""){
+            alert("비밀번호를 입력하세요");
+            pwd.focus();
+        }
+        else{
+            callback(strMail,strPwd);
+        }
+    }
 </script>

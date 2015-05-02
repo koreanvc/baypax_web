@@ -12,6 +12,7 @@ module.exports = function (app) {
       if (!err) {
         res.status(200).send(data);
       } else {
+        console.log(err);
         next(err);
       }
     }
@@ -59,7 +60,7 @@ module.exports = function (app) {
   });
 
   //Saehyun code
-  router.get('/partners', function(req, res, next){
+  router.get('/partners', function (req, res, next) {
     res.render('app/menu/partners.html');
   });
 
@@ -67,30 +68,25 @@ module.exports = function (app) {
     var mail = req.body.userId;
     var pwd = req.body.pwd;
     console.log(mail + '/' + pwd);
-    //var callback = sendDataCallback(res, next);
-    userBiz.logIn(mail, pwd, function(err,data){
-      if(err){
-        next(err);
-      }
-      else{
-        if(data.code>0){
-          res.status(200).send('<script type="text/javascript">alert("성공"); location.relo</script>')
-        }
-        else{
-          res.status(200).send('<script type="text/javascript">alert("실패")</script>')
-        }
-      }
-    });
+    var callback = sendDataCallback(res, next);
+    userBiz.logIn(mail, pwd, callback);
   });
 
   router.post('/register', function (req, res, next) {
-    var mail = req.body.userId;
-    var name = req.body.userName;
-    var pwd = req.body.pwd;
-    console.log(mail + name + pwd);
+    var params={
+      mail:req.body.mail,
+      name:req.body.name,
+      pwd:req.body.pwd,
+      cCode:req.body.cCode
+    };
     var callback = sendDataCallback(res, next);
-    userBiz.register(mail, name, pwd, callback);
+    userBiz.register(params, callback);
 
+  });
+
+  router.get('/getCountry',function(req,res,next){
+    var callback=sendDataCallback(res,next);
+    userBiz.GetCountry(callback);
   });
 
   /*

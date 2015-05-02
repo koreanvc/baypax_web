@@ -9,11 +9,11 @@ var path = require('path'),
 			port: 8080,
 			ip: '0.0.0.0'
 		},
-		mysql:{
-			host:'192.168.0.13',
-			port:3306,
-			user:'baypax',
-			password:'baypax',
-			database:'baypax'
-		}
+		mysql: {
+      host: '192.168.0.15',
+      port: 3306,
+      user: 'baypax',
+      password: 'baypax',
+      database: 'baypax'
+    }
 	};

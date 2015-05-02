@@ -6,11 +6,12 @@ var config = require('../config/config'),
 
 module.exports = {
 
-  insertUser: function (email, name, pwd, callback) {
+  insertUser: function (email, name, pwd, cCode, callback) {
     var user = {
       'user_mail': email,
       'user_name': name,
-      'user_pwd': pwd
+      'user_pwd': pwd,
+      'c_code':cCode
     };
     var query = connection.query('insert into users set ?', user, function (err, result) {
       if (err) {
@@ -29,7 +30,6 @@ module.exports = {
 
     var query = connection.query('select user_mail,user_name,user_pwd from users where user_mail=' + mysql.escape(email), function (err, result) {
       if (err) {
-        console.error(err);
         callback(err);
       }
       //console.log(query);
@@ -40,17 +40,31 @@ module.exports = {
     })
   },
 
-  selectAllServers: function (callback) {
-    var client = redis.createClient(config.redis.port, config.redis.host);
-    client.lrange('pm2serverList', 0, -1, function (err, res) {
-      client.quit();
-      // check error
-      if (err) {
-        err = new ServiceUnavailableError(err);
-      }
 
-      // callback
-      callback(err, res);
-    });
+  selectAllCountry: function(callback){
+    var query = connection.query('select code_a3,name from country order by name',function(err,result){
+      if(err){
+        callback(err);
+      }
+      else{
+        callback(null,result);
+      }
+    })
+  },
+
+  temp: function (obj, callback) {
+
+    var query = connection.query('insert into country set ?', obj, function (err, result) {
+      if (err) {
+        console.error(err);
+        callback(err);
+      }
+      else {
+        //console.log(query);
+        console.log(obj);
+        callback(null, result);
+      }
+    })
+
   }
 }
