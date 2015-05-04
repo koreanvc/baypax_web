@@ -4,7 +4,9 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     path = require('path'),
-    config = require('./config');
+    flash = require('connect-flash'),
+    config = require('./config'),
+    session = require('express-session');
 
 // Express configuration
 module.exports = function (app) {
@@ -25,4 +27,7 @@ module.exports = function (app) {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(cookieParser());
+  app.use(session({resave:true,saveUninitialized:true,secret:'no-secret'}));
+  app.use(flash());
+  //app.use(express.session());
 };

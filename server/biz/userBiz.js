@@ -14,10 +14,10 @@ module.exports = {
         callback(err);
       }
       else {
-        console.log(data);
+        //console.log(data);
         if (data[0]) {
           if (bcrypt.compareSync(pwd, data[0].user_pwd)) {
-            callback(null, JSON.stringify(CONSTS.SUCCESS_CODE));
+            callback(null, JSON.stringify(CONSTS.SUCCESS_CODE),data[0]);
           }
           else {
             callback(null, JSON.stringify(ERR_CD.LOGIN.WRONG_PWD));

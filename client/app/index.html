@@ -98,7 +98,11 @@
                         <a href="javascript:pageLoad('/booking')">My bookings</a>
                     </li>
                     <li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <% if(!user) {%>
                         <a href="javascript:pageLoad('/login')">LogIn</a>
+                        <% } else { %>
+                        <a href="javascript:logout()")>LogOut</a>
+                        <% } %>
                     </li>
                 </ul>
             </div>
@@ -152,6 +156,13 @@
 
     <script src="app/index.js"></script>
     <script type="text/javascript">
+        function logout(){
+            if(confirm('정말 로그아웃 맨?'))
+            {
+                location.href='/logout';
+            }
+        }
+
         function scroll(id) {
 
             $('html, body').animate({
@@ -170,12 +181,18 @@
         }
 
         function pageLoad(url) {
-            $('#sitemain').load(url)
-            if($('.nav').css('display')!='none'){
+            $('#sitemain').load(url);
+            if($('.nav').css('display')!='none' && $(window).width()<930){
                 $('.nav').slideToggle('fast');
             }
             scrollTop();
         }
+
+        <% if(path){ %>
+        pageLoad("<%-path%>");
+        <%} else {%>
+        $('#sitemain').load('/home');
+        <%}%>
 
     </script>
 </body>

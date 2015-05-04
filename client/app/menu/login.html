@@ -1,4 +1,5 @@
 <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <div class="container">
 
 
@@ -31,15 +32,15 @@
                 url: "/login",
                 dataType: "JSON",
                 data:{
-                    userId:cMail,
+                    mail:cMail,
                     pwd:cPwd
                 },
                 success: function(data) {
-
+                    //location.replace(data);
                     console.log(data);
                     if(data.code>0){
                         alert('성공');
-                        location.href='/';
+                        location.href='<%-redirectUrl%>';
                     }
                     else{
                         alert(data.msg);
@@ -47,7 +48,13 @@
                     //callback(data);
                 },
                 error: function(xhr, status, error) {
+                    console.log(xhr);
+                    console.log(status);
+                    console.log(error);
                     alert("에러발생");
+                },
+                complete: function(data){
+
                 }
             });
         });

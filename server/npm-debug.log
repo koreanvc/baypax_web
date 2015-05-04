@@ -1,0 +1,47 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'express:3.10.2' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 warn package.json session@0.1.0 bugs['web'] should probably be bugs['url'].
+5 verbose cache add [ 'express:3.10.2', null ]
+6 verbose cache add name=undefined spec="express:3.10.2" args=["express:3.10.2",null]
+7 verbose parsed url { protocol: 'express:',
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: '3.10.2',
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: '3.10.2',
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: null,
+7 verbose parsed url   path: null,
+7 verbose parsed url   href: 'express:3.10.2' }
+8 silly lockFile dcd10eab-express-3-10-2 express:3.10.2
+9 verbose lock express:3.10.2 /Users/guma/.npm/dcd10eab-express-3-10-2.lock
+10 silly lockFile dcd10eab-express-3-10-2 express:3.10.2
+11 silly lockFile dcd10eab-express-3-10-2 express:3.10.2
+12 verbose addNamed [ 'express:3.10.2', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile d7cde143-express-3-10-2 express:3.10.2@
+15 verbose lock express:3.10.2@ /Users/guma/.npm/d7cde143-express-3-10-2.lock
+16 silly addNameRange { name: 'express:3.10.2', range: '*', hasData: false }
+17 error TypeError: Cannot call method 'replace' of null
+17 error     at cf (/usr/local/lib/node_modules/npm/node_modules/npm-cache-filename/index.js:14:22)
+17 error     at RegClient.get (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:28:20)
+17 error     at addNameRange (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:201:12)
+17 error     at /usr/local/lib/node_modules/npm/lib/cache/add-named.js:47:5
+17 error     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:30:7
+17 error     at cb (/usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+17 error     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:171:16
+17 error     at Object.oncomplete (fs.js:108:15)
+18 error If you need help, you may report this *entire* log,
+18 error including the npm and node versions, at:
+18 error     <http://github.com/npm/npm/issues>
+19 error System Darwin 14.1.0
+20 error command "node" "/usr/local/bin/npm" "install" "express:3.10.2"
+21 error cwd /Users/guma/WebstormProjects/baypax_web/server
+22 error node -v v0.10.35
+23 error npm -v 1.4.28
+24 error type non_object_property_call
+25 verbose exit [ 1, true ]

@@ -2,10 +2,58 @@
 
 var config = require('../config/config'),
   router = require('express').Router(),
-  layout = require('express-layout'),
+  passport = require('passport'),
+  LocalStrategy = require('passport-local').Strategy,
+//layout = require('express-layout'),
   userBiz = require('../biz/userBiz');
 
 module.exports = function (app) {
+  passport.serializeUser(function (user, done) {
+    console.log('serialize');
+    done(null, user);
+  });
+  // 인증 후, 페이지 접근시 마다 사용자 정보를 Session에서 읽어옴.
+  passport.deserializeUser(function (user, done) {
+    //findById(id, function (err, user) {
+    console.log('deserialize');
+    console.log(user);
+    done(null, user);
+    //});
+  });
+  passport.use(new LocalStrategy({
+      usernameField: 'mail',
+      passwordField: 'pwd',
+      passReqToCallback: true
+    },
+    function (req, mail, pwd, done) {
+      console.log('test');
+      userBiz.logIn(mail, pwd, function (err, data, user) {
+        if (err) {
+          return done(err);
+        }
+        else {
+          if (JSON.parse(data).code > 0) {
+            var userCookie = { mail: user.user_mail, name: user.user_name, seq: user.user_seq };
+            return done(null, userCookie, data);
+          }
+          else {
+            return done(null, false, data);
+          }
+        }
+      })
+    }
+  ));
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+  function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    else {
+      res.redirect('/login?redirectUrl='+req.url);
+    }
+  }
 
   function sendDataCallback(res, next) {
     return function (err, data) {
@@ -21,10 +69,8 @@ module.exports = function (app) {
   // render page
   router.get('/', function (req, res, next) {
     var path = req.query.path;
-    if (!path) {
-      path = 'home';
-    }
-    res.render('app/index.html', { title: 'BAYPAX', path: req.query.path });
+    var user = req.user;
+    res.render('app/index.html', { title: 'BAYPAX', path: path, user:user });
   });
 
   router.get('/reservation', function (req, res, next) {
@@ -32,7 +78,9 @@ module.exports = function (app) {
   });
 
   router.get('/login', function (req, res, next) {
-    res.render('app/menu/login.html');
+    var redirectUrl = req.query.redirectUrl;
+    redirectUrl = redirectUrl != null && redirectUrl != undefined && redirectUrl != "" ? "/?path="+req.query.redirectUrl : "/";
+    res.render('app/menu/login.html',{redirectUrl:redirectUrl});
   });
 
   router.get('/register', function (req, res, next) {
@@ -47,8 +95,9 @@ module.exports = function (app) {
     res.render('app/menu/home.html');
   });
 
-  router.get('/booking', function (req, res, next) {
-    res.render('app/menu/booking.html');
+  router.get('/booking', ensureAuthenticated, function (req, res, next) {
+    //res.render('app/menu/booking.html');
+    res.send(req.user);
   });
 
   router.get('/faq', function (req, res, next) {
@@ -64,149 +113,50 @@ module.exports = function (app) {
     res.render('app/menu/partners.html');
   });
 
-  router.post('/login', function (req, res, next) {
-    var mail = req.body.userId;
-    var pwd = req.body.pwd;
-    console.log(mail + '/' + pwd);
-    var callback = sendDataCallback(res, next);
-    userBiz.logIn(mail, pwd, callback);
+  router.get('/logout',function(req,res,next){
+    //console.log(req);
+    req.logout();
+    //sendDataCallback(res,next)(null,{code:111});
+    res.redirect('/');
   });
 
+  router.post('/login',function(req,res,next){
+    passport.authenticate('local',function(err,user,info){
+      if(err){
+        return next(err);
+      }
+      console.log(req);
+      if(user){
+        req.login(user,null,function(){
+          return res.status(200).send(info);
+        });
+      }else {
+        return res.status(200).send(info);
+      }
+    })(req,res,next);
+  });
+
+
   router.post('/register', function (req, res, next) {
-    var params={
-      mail:req.body.mail,
-      name:req.body.name,
-      pwd:req.body.pwd,
-      cCode:req.body.cCode
+    console.log(req);
+    var params = {
+      mail: req.body.mail,
+      name: req.body.name,
+      pwd: req.body.pwd,
+      cCode: req.body.cCode
     };
     var callback = sendDataCallback(res, next);
     userBiz.register(params, callback);
-
   });
 
-  router.get('/getCountry',function(req,res,next){
-    var callback=sendDataCallback(res,next);
+  router.get('/getCountry', function (req, res, next) {
+    var callback = sendDataCallback(res, next);
     userBiz.GetCountry(callback);
   });
 
-  /*
-   router.post('/signIn',function(req,res,next){
-
-   var userId = req.body.userId;
-   var pwd = req.body.pwd;
-   var callback = sendDataCallback(res, next);
-   console.log('signIn/'+userId+'/'+pwd);
-   if(userId && pwd){
-   member.signIn(userId,pwd,callback);
-   } else{
-   callback(new InvalidArgumentError('Invalid Parameters'));
-   }
-   });
-
-   router.get('/signUp',function(req,res,next){
-   console.log('signUpView/');
-   res.render('app/signUp.html');
-   });
-
-   router.post('/signUp',function(req,res,next){
-   var userId = req.body.userId;
-   var pwd = req.body.pwd;
-   var cPwd = req.body.cPwd;
-   console.log('signUp/'+userId+'/'+pwd);
-   var callback = sendDataCallback(res,next);
-   if(userId && pwd && cPwd){
-   if(userId.length<3 || userId.length>10||pwd.length<3 || pwd.length>10||pwd!=cPwd){
-   callback(new InvalidArgumentError('Invalid Parameters'));
-   }
-   member.signUp(userId,pwd,callback);
-   }
-   else{
-   callback(new InvalidArgumentError('Invalid Parameters'));
-   }
-   });
-
-   router.get('/gameView/:userId',function(req,res,next){
-   var userId = req.params.userId;
-   console.log('gameView/'+userId);
-   res.render('app/gameView.html',{
-   data:{userId:userId}
-   });
-   });
-
-   router.post('/gameView/roll', function (req, res, next) {
-
-   var userId = req.body.userId;;
-   var score = parseInt(req.body.roll);
-   var callback = sendDataCallback(res, next);
-   console.log('gameView/roll/'+userId+'/score:'+score);
-   if (userId && score || score == 0) {
-   roll.add(userId, score, callback);
-   } else {
-   callback(new InvalidArgumentError('Invalid Parameters'));
-   }
-   });
-
-   router.post('/gameView/newGame', function (req, res, next) {
-
-   var userId = req.body.userId;;
-   var callback = sendDataCallback(res, next);
-   console.log('gameView/newGame/'+userId);
-   if (userId) {
-   game.newGame(userId, callback);
-   } else {
-   callback(new InvalidArgumentError('Invalid Parameters'));
-   }
-   });
-
-   router.post('/gameView/loadGame', function (req, res, next) {
-
-   var userId = req.body.userId;;
-   var callback = sendDataCallback(res, next);
-   console.log('gameView/loadGame/'+userId);
-   if (userId) {
-   game.loadGame(userId, callback);
-   } else {
-   callback(new InvalidArgumentError('Invalid Parameters'));
-   }
-   });
-
-   router.get('/historyView/:userId',function(req,res,next){
-   var userId = req.params.userId;
-   console.log('historyView/'+userId);
-   res.render('app/historyView.html',{
-   data:{userId:userId}
-   });
-   });
-
-   router.post('/historyView/loadHistory', function (req, res, next) {
-
-   var userId = req.body.userId;;
-   var callback = sendDataCallback(res, next);
-   console.log('historyView/loadHistory/'+userId);
-   if (userId) {
-   history.loadHistory(userId, callback);
-   } else {
-   callback(new InvalidArgumentError('Invalid Parameters'));
-   }
-   });
-
-   router.post('/historyView/deleteGame', function (req, res, next) {
-
-   var gameId = req.body.gameId;;
-   var callback = sendDataCallback(res, next);
-   console.log('historyView/deleteGame/'+gameId);
-   if (gameId) {
-   history.deleteGame(gameId, callback);
-   } else {
-   callback(new InvalidArgumentError('Invalid Parameters'));
-   }
-   });
-
-
-   */
-  // use router
   //app.use(layout());
   //app.set('layouts','../client/app/layout');
   //app.set('layout','index.html');
   app.use(router);
 };
+
