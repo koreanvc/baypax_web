@@ -26,13 +26,18 @@
 - 현재 테스트한 테이블은 users 하나!
 
 < 설치 후 해야 할 것들 >
+- 포트 오픈
+sudo vi /etc/mysql/my.conf 에서 bind_address 주석처리
+
 - 사용자 추가
-use mysql
+use mysql;
 create user ‘아이디’@‘%’ identified by ‘비번’; //%는 외부접근 허용한다는 의미, 허용 안하면 %대신 localhost
+GRANT ALL PRIVILEGES ON * . * TO 'golden'@'localhost';
+flush privileges;
 
 - DB추가
-create database baypax
-use baypax
+create database baypax;
+use baypax;
 
 
 create table users (
@@ -41,7 +46,7 @@ user_mail varchar(50) NOT NULL,
 user_name varchar(50) NOT NULL,
 user_pwd varchar(500) NOT NULL,
 c_code char(3) NOT NULL,
-PRIMARY KEY(seq)
+PRIMARY KEY(seq),
 UNIQUE(user_mail));
 
 create table country (

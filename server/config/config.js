@@ -10,10 +10,10 @@ var path = require('path'),
 			ip: '0.0.0.0'
 		},
 		mysql: {
-      host: '192.168.0.15',
+      host: 'gumabae.iptime.org',
       port: 3306,
       user: 'baypax',
-      password: 'baypax',
+      password: 'baypax123',
       database: 'baypax'
     }
 	};
