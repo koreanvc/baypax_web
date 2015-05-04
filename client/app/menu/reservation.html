@@ -1,3 +1,115 @@
+
 <div class="container">
 
+
+    <div class="register-container">
+        <form class="form-register" onsubmit="return false">
+            <h2 class="form-register-heading">Reservation</h2>
+            <hr/>
+            <div id="map-canvas" style="width:100%;height:300px;display:none"></div>
+            <input id="mail" type="text" class="form-control" placeholder="Email address" autofocus
+                   required>
+            <input id="pwd" type="password" class="form-control" placeholder="Password" required>
+            <input id="cPwd" type="password" class="form-control" placeholder="Confirm password" required>
+            <hr/>
+            <input style="width: 49%" id="fName" type="text" class="form-control" placeholder="First Name" required>
+            <input style="width:49%; float:right" id="lName" type="text" class="form-control" placeholder="Last Name" required>
+            <input id="mobile" type="text" class="form-control" placeholder="Mobile contacts" autofocus
+                   required>
+            <select id="country" class="form-control" style="color:#999" onchange="countryChange()">
+
+            </select>
+            <input class="btn btn-lg btn-success" type="submit" onclick="register()" value="Register"/>
+        </form>
+
+    </div>
+    <!-- /container -->
 </div>
+<script type="text/javascript">
+    var map;
+    function initialize() {
+        var mapOptions = {
+            zoom: 8,
+            center: new google.maps.LatLng(-34.397, 150.644)
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+    }
+initialize();
+    //google.maps.event.addDomListener(window, 'load', initialize);
+    function getCountryList(){
+        $.ajax({
+            type:"GET",
+            url:"/getCountry",
+            dataType:"JSON",
+            success:function(data){
+                //console.log(data);
+                $('#country').html('<option value="" disabled selected style="display:none;">Country</option>');
+                for(var i=0;i<data.length;i++){
+                    $('#country').append('<option value='+data[i].code_a3+'>'+data[i].name+'</option>');
+                }
+            },
+            error: function (xhr, status, error) {
+            }
+        })
+    }
+
+    function countryChange() {
+        if ($('#country').val() != "") {
+            $('#country').css('color','black');
+        }
+    }
+
+    function register() {
+        if (!registerValidation()) {
+            return;
+        }
+        var mail = $('#mail').val();
+        var name = $('#fname').val();
+        var pwd = $('#pwd').val();
+        var cCode=$('#country').val();
+
+        $.ajax({
+            type: "POST",
+            url: "/register",
+            dataType: "JSON",
+            data: {
+                "mail": mail,
+                "name": name,
+                "pwd": pwd,
+                "cCode": cCode
+            },
+            success: function (data) {
+                console.log(data);
+                if (data.code < 0) {
+                    alert(data.msg)
+                }
+                else {
+                    alert('가입성공!')
+                    pageLoad('/login');
+                }
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+    function registerValidation() {
+        var essentialInputs = ['mail', 'pwd', 'cPwd', 'name', 'country'];
+        for (var i = 0; i < essentialInputs.length; i++) {
+            var element = document.getElementById(essentialInputs[i]);
+            if (element.value == "") {
+                alert('필수 입력 사항을 모두 입력해주세요');
+                element.focus();
+                return false;
+            }
+        }
+        if($('#pwd').val()!=$('#cPwd').val()){
+            alert('비밀번호 일치하지 않음');
+            document.getElementById('cPwd').focus();
+            return false;
+        }
+        return true;
+    }
+    getCountryList();
+
+</script>

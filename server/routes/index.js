@@ -34,7 +34,9 @@ module.exports = function (app) {
         else {
           if (JSON.parse(data).code > 0) {
             var userCookie = { mail: user.user_mail, name: user.user_name, seq: user.user_seq };
-            return done(null, userCookie, data);
+            req.login(userCookie, null, function () {
+              return done(null, userCookie, data);
+            });
           }
           else {
             return done(null, false, data);
@@ -51,7 +53,7 @@ module.exports = function (app) {
       return next();
     }
     else {
-      res.redirect('/login?redirectUrl='+req.url);
+      res.redirect('/login?redirectUrl=' + req.url);
     }
   }
 
@@ -70,7 +72,7 @@ module.exports = function (app) {
   router.get('/', function (req, res, next) {
     var path = req.query.path;
     var user = req.user;
-    res.render('app/index.html', { title: 'BAYPAX', path: path, user:user });
+    res.render('app/index.html', { title: 'BAYPAX', path: path, user: user });
   });
 
   router.get('/reservation', function (req, res, next) {
@@ -79,8 +81,8 @@ module.exports = function (app) {
 
   router.get('/login', function (req, res, next) {
     var redirectUrl = req.query.redirectUrl;
-    redirectUrl = redirectUrl != null && redirectUrl != undefined && redirectUrl != "" ? "/?path="+req.query.redirectUrl : "/";
-    res.render('app/menu/login.html',{redirectUrl:redirectUrl});
+    redirectUrl = redirectUrl != null && redirectUrl != undefined && redirectUrl != "" ? "/?path=" + req.query.redirectUrl : "/";
+    res.render('app/menu/login.html', { redirectUrl: redirectUrl });
   });
 
   router.get('/register', function (req, res, next) {
@@ -96,8 +98,8 @@ module.exports = function (app) {
   });
 
   router.get('/booking', ensureAuthenticated, function (req, res, next) {
-    //res.render('app/menu/booking.html');
-    res.send(req.user);
+    res.render('app/menu/booking.html',{user:req.user});
+    //res.send(req.user);
   });
 
   router.get('/faq', function (req, res, next) {
@@ -113,27 +115,18 @@ module.exports = function (app) {
     res.render('app/menu/partners.html');
   });
 
-  router.get('/logout',function(req,res,next){
-    //console.log(req);
+  router.get('/logout', function (req, res, next) {
     req.logout();
-    //sendDataCallback(res,next)(null,{code:111});
     res.redirect('/');
   });
 
-  router.post('/login',function(req,res,next){
-    passport.authenticate('local',function(err,user,info){
-      if(err){
+  router.post('/login', function (req, res, next) {
+    passport.authenticate('local', function (err, user, info) {
+      if (err) {
         return next(err);
       }
-      console.log(req);
-      if(user){
-        req.login(user,null,function(){
-          return res.status(200).send(info);
-        });
-      }else {
-        return res.status(200).send(info);
-      }
-    })(req,res,next);
+      return res.status(200).send(info);
+    })(req, res, next);
   });
 
 
