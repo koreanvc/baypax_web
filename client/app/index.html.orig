@@ -1,0 +1,191 @@
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="../content/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="../content/js/jquery.nivo.slider.js"></script>
+    <link rel="stylesheet" href="../content/css/nivo-slider.css">
+    <link rel="stylesheet" href="../content/style.css">
+    <link rel="stylesheet" href="../content/css/theme-responsive.css">
+    <link rel="stylesheet" href="../content/css/font.css">
+    <link rel="stylesheet" href="../content/css/font2.css">
+    <link rel="stylesheet" href="../content/css/font-awesome.min.css">
+    <link href="../content/css/menu-style.css" rel="stylesheet">
+    <link href="../content/css/signin.css" rel="stylesheet">
+    <title><%- title %></title>
+    <!--
+        <title>BAYPAX | teambraavos</title>-->
+    <style>.top-bar a.top-menu, .contact-banner a, input.search-submit, .post-password-form input[type=submit], .icon:hover, .newsletter-form input[type="submit"] {
+        background-color: #00a8ff;
+    }
+
+    .header .header-inner .nav ul li a:hover, .newsletter h2 span, .recent-post li span, .phone-no strong, a {
+        color: #00a8ff
+    }
+    </style>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+
+<div class="slider-main">
+
+    <div id="slider" class="nivoSlider">
+        <img src="../content/images/pics/main_1.jpg"/>
+        <img src="../content/images/pics/main_2.jpg"/>
+        <img src="../content/images/pics/main_3.jpg"/>
+        <img src="../content/images/pics/main_4.jpg"/>
+    </div>
+    <div class="top-bar">
+        <h1>BAYPAX</h1>
+        Make one more day on your trip.
+        <br>
+        <br>
+        <a href="javascript:pageLoad('/reservation')" class="top-menu">Reservation</a>
+        <a style="z-index:10" href="javascript:scrollTop();" class="arrow-down"></a>
+    </div>
+    <!-- top-bar -->
+
+    <!-- slider -->
+</div>
+<!-- slider-main -->
+
+<!-- slider -->
+</div>
+<div class="header">
+    <div id="scrollTop"></div>
+    <div class="header-inner">
+        <div id='logo' class="logo">
+            <a href="/">
+                <h1>BAYPAX</h1>
+
+            </a>
+        </div>
+        <div id="mobileScrollTop"></div>
+        <!-- logo -->
+        <div class="toggle" style="margin-top:20px">
+            <a class="toggleMenu" href="#">Menu</a>
+        </div>
+        <!-- toggle -->
+
+
+
+        <div class="nav" style="display: block;">
+            <div class="menu-container">
+                <ul class="menu">
+                    <li id="menu-item-70"
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a
+                            href="javascript:pageLoad('/home')">Home</a>
+                    </li>
+                    <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="javascript:pageLoad('/how')">How
+                        it works</a>
+                    </li>
+                    <li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="javascript:pageLoad('/reservation')">Reservation</a>
+                    </li>
+<<<<<<< HEAD
+                    <li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="javascript:pageLoad('/partners')">Partners</a>
+=======
+                    <li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="javascript:pageLoad('/faq')">FAQ</a>
+>>>>>>> origin/dev_gumab
+                    </li>
+                    <li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="javascript:pageLoad('/booking')">My
+                        bookings</a>
+                    </li>
+                    <li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="javascript:pageLoad('/login')">LogIn</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- nav -->
+
+
+
+        <div class="clear"></div>
+    </div>
+    <!-- header-inner -->
+</div>
+<!-- header -->
+<div class="main-container">
+
+    <div class="content-area">
+        <div class="middle-align content_sidebar">
+            <div class="site-main" id="sitemain">
+                <!-- #post-## -->
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+
+    <div id="footer-wrapper">
+        <footer class="footer">
+            <div class="footer-col-3">
+                <h2>Teambraavos</h2>
+
+                <p>Nuritkumsquare 6F 601, 1605, Sangam-dong, Mapo-gu, Seoul, Korea</p>
+
+                <div class="phone-no">
+                    <p><strong>Phone:</strong>+82 010 2637 2923</p>
+
+                    <p><strong>E-mail:</strong><a href="mailto:teambraavos@gmail.com">teambraavos@gmail.com</a>
+                    </p>
+
+                    <p><strong>Website:</strong><a href="http://teambraavos.com" target="_blank">teambraavos.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </footer>
+
+        <div class="copyright-wrapper">
+            <div class="copyright">
+                <div class="copyright-txt">© Teambraavos. All Rights Reserved</div>
+                <div class="design-by"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <script src="app/index.js"></script>
+    <script type="text/javascript">
+        function scroll(id) {
+
+            $('html, body').animate({
+                scrollTop: $("#" + id).offset().top
+            }, 500);
+
+        }
+
+        function scrollTop() {
+            if ($(window).width() > 719) {
+                scroll('scrollTop');
+            }
+            else {
+                scroll('mobileScrollTop');
+            }
+        }
+
+        function pageLoad(url) {
+            document.title = url;
+            $('#sitemain').load(url)
+            scrollTop();
+        }
+        pageLoad('/<%- path?path:"home" %>');
+
+    </script>
+</body>
+
+</html>
